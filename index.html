@@ -312,7 +312,8 @@
     @media (min-width: 1024px) { .hero { height: 809px; } }
 
     .hero__media { position: absolute; inset: 0; z-index: 1; }
-    .hero__media img { width: 100%; height: 100%; object-fit: cover; }
+    .hero__media img,
+    .hero__media video { width: 100%; height: 100%; object-fit: cover; }
     .hero__media::after {
       content: ''; position: absolute; inset: 0; pointer-events: none;
       background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, transparent 40%, transparent 60%, rgba(0,0,0,0.1) 100%);
@@ -821,7 +822,9 @@
        ================================================================ -->
   <section class="hero" id="hero">
     <div class="hero__media">
-      <img src="images/US_Home_Video_Placeholder_Image.webp" alt="Aerial view of baseball fields" style="width:100%;height:100%;object-fit:cover;">
+      <video autoplay loop muted playsinline>
+        <source src="images/homepage-hero-video.mp4" type="video/mp4">
+      </video>
     </div>
     <div class="hero__logo-mark">
       <svg viewBox="0 0 434 142" fill="none" xmlns="http://www.w3.org/2000/svg">
