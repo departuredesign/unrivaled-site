@@ -939,7 +939,7 @@ $assets = get_theme_file_uri( "assets/" );
     </div>
   </footer>
 
-
+  <script>
     /* --- Mobile Menu --- */
     const mobileMenu = document.getElementById('mobileMenu');
     function openMenu() {
