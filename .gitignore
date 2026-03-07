@@ -4,3 +4,8 @@ Thumbs.db
 node_modules/
 .vercel
 .env*.local
+
+# Large media files — upload via SFTP or WP Engine file manager
+*.mp4
+*.mov
+*.avi
