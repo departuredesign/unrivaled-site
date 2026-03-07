@@ -143,7 +143,8 @@
     .site-header__nav-link:nth-child(3) { animation-delay: 400ms; }
     .site-header__nav-link:nth-child(4) { animation-delay: 500ms; }
     .site-header__nav-link:nth-child(5) { animation-delay: 600ms; }
-    .site-header__nav-link:hover { opacity: 0.7; }
+    .site-header__nav-link:hover { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
+    .site-header__nav-link[aria-current="page"] { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
     .site-header__nav-link:focus-visible {
       outline: var(--focus-ring-width) solid var(--color-white);
       outline-offset: var(--focus-ring-offset); border-radius: 2px;
@@ -297,7 +298,8 @@
       text-transform: uppercase; text-decoration: none; color: var(--color-red);
       transition: opacity var(--transition-fast);
     }
-    .sticky-nav__link:hover { opacity: 0.7; }
+    .sticky-nav__link:hover { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
+    .sticky-nav__link[aria-current="page"] { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
 
     .sticky-nav .hamburger { display: flex; }
     @media (min-width: 1024px) { .sticky-nav .hamburger { display: none; } }
@@ -322,15 +324,19 @@
     .hero__logo-mark {
       position: absolute; z-index: 2; top: 50%; left: 50%; transform: translate(-50%,-50%);
       width: 200px; color: var(--color-white); pointer-events: none;
-      opacity: 0; animation: hero-logo-in 600ms var(--ease-out) 300ms forwards;
-      transition: width 100ms linear, top 100ms linear, color 100ms linear;
+      opacity: 0;
     }
     @media (min-width: 1024px) { .hero__logo-mark { width: 260px; } }
     .hero__logo-mark svg { width: 100%; height: auto; fill: currentColor; }
-    @keyframes hero-logo-in {
-      from { opacity: 0; transform: translate(-50%,-50%) scale(0.95); }
-      to { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+
+    /* Fixed bolt overlay — handles the entire scroll animation (desktop only) */
+    .scroll-bolt {
+      position: fixed; z-index: 180; pointer-events: none;
+      left: 50%; transform: translate(-50%, -50%);
+      display: none; /* hidden by default, shown by JS on desktop */
     }
+    .scroll-bolt svg { width: 100%; height: auto; fill: currentColor; }
+    @media (min-width: 1024px) { .scroll-bolt { display: block; } }
 
 
     /* ==========================================================================
@@ -611,8 +617,10 @@
     .visit-site-link__arrow { width: 12px; height: 7px; flex-shrink: 0; transition: transform var(--transition-base); }
     @media (min-width: 1024px) { .visit-site-link__arrow { width: 23px; height: 13px; } }
     .visit-site-link__text { position: relative; }
-    .visit-site-link:hover { opacity: 0.85; }
+    .visit-site-link:hover { opacity: 1; }
     .visit-site-link:hover .visit-site-link__arrow { transform: translateX(4px); }
+    .visit-site-link:hover .visit-site-link__arrow path { fill: var(--color-red); }
+    .visit-site-link:active .visit-site-link__arrow path { fill: #BB0101; }
     .visit-site-link--list { font-family: var(--font-ui); font-weight: var(--weight-semibold); font-size: 9px; letter-spacing: 0.91px; gap: 5px; }
     .visit-site-link--list .visit-site-link__arrow { width: 12px; height: 7px; }
 
@@ -627,8 +635,8 @@
       line-height: 21.2px; letter-spacing: 0.54px; background-color: var(--color-blue); color: var(--color-white);
       border-radius: var(--radius); transition: background-color var(--transition-fast), transform var(--transition-fast);
     }
-    .btn:hover { background-color: #0050CC; }
-    .btn:active { background-color: #003DA6; transform: scale(0.98); }
+    .btn:hover { background-color: var(--color-red); }
+    .btn:active { background-color: #BB0101; transform: scale(0.98); }
     .btn:focus-visible { outline: var(--focus-ring-width) solid var(--color-white); outline-offset: var(--focus-ring-offset); }
 
 
@@ -817,6 +825,13 @@
     </div>
   </header>
 
+  <!-- FIXED SCROLL BOLT (desktop only — handles the morph animation) -->
+  <div class="scroll-bolt" id="scrollBolt" aria-hidden="true">
+    <svg viewBox="0 0 434 142" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M156.655 100.212C166.722 97.528 170.092 102.311 164.142 110.846C157.271 120.702 160.903 125.403 172.211 121.297L434 26.2306H247.736C244.967 26.2306 241.277 27.986 239.541 30.1332L191.322 89.6114C188.635 92.8322 186.312 91.4249 188.495 87.6673L231.346 14.5129C236.025 6.52863 232.267 0 222.996 0H92.3755L0 142L156.655 100.212Z" fill="currentColor"/>
+</svg>
+  </div>
+
   <!-- ================================================================
        HERO
        ================================================================ -->
@@ -993,11 +1008,18 @@
     });
 
     /* =================================================================
-       HOMEPAGE SCROLL ANIMATION
-       The site-header is position:fixed and transparent. It never moves.
-       The bolt in the hero animates up toward it (shrinks, turns red).
-       Once past the hero, the header dwells over the content, then
-       slides away. Scroll-up after that shows the white sticky nav.
+       HOMEPAGE SCROLL ANIMATION (Desktop ≥1024px only)
+       
+       Uses a single fixed-position bolt element (#scrollBolt) that
+       smoothly morphs from large/white/centered → small/red/nav-position.
+       
+       States:
+       1. Load: bolt at center of hero, white, large (260px)
+       2. Scroll down: bolt shrinks, moves up to nav, turns red
+       3. Past hero: transparent header slides away
+       4. Scroll up past hero: sticky nav appears (white bg)
+       5. Scroll back into hero: reverses — bolt grows, turns white
+       6. Mobile: no bolt animation at all
        ================================================================= */
 
     const hero = document.getElementById('hero');
@@ -1005,30 +1027,32 @@
     const siteHeader = document.getElementById('siteHeader');
     const heroLogoMark = document.querySelector('.hero__logo-mark');
     const heroHeaderBolt = document.getElementById('heroHeaderBolt');
+    const scrollBolt = document.getElementById('scrollBolt');
     const isHomepage = !!heroLogoMark;
+    var isDesktop = function() { return window.innerWidth >= 1024; };
+
+    // Bolt dimensions
+    var BIG_W = 260;   // starting width at center of hero
+    var SMALL_W = 114;  // final width locked in nav
 
     /* — Initial setup — */
-    if (isHomepage && heroHeaderBolt) {
-      heroHeaderBolt.style.opacity = '0';
-      heroHeaderBolt.style.transition = 'opacity 250ms ease';
-    }
+    if (isHomepage) {
+      // Hide the old hero bolt and header bolt — the scrollBolt replaces both
+      if (heroLogoMark) heroLogoMark.style.display = 'none';
+      if (heroHeaderBolt) heroHeaderBolt.style.opacity = '0';
 
-    if (isHomepage && heroLogoMark) {
-      heroLogoMark.addEventListener('animationend', function() {
-        this.style.animation = 'none';
-        this.style.opacity = '1';
-        this.style.transform = 'translate(-50%, -50%)';
-      }, { once: true });
+      // Initial state for the fixed bolt: centered in hero, white, large
+      if (scrollBolt && isDesktop()) {
+        scrollBolt.style.width = BIG_W + 'px';
+        scrollBolt.style.color = 'white';
+        scrollBolt.style.opacity = '1';
+      }
     }
 
     /* — State tracking — */
     var lastScrollY = 0;
     var stickyNavVisible = false;
     var headerDismissed = false;
-    var dismissStartedAt = 0;
-    var dismissScrollOrigin = -1;
-    var DWELL_MS = 800;
-    var DWELL_PX = 250;
 
     function updateNav() {
       var scrollY = window.scrollY;
@@ -1037,43 +1061,58 @@
       var goingUp = scrollY < lastScrollY;
       var pastHero = scrollY >= heroH;
       var inHero = scrollY < heroH;
-      var now = Date.now();
 
-      /* ─── BOLT ANIMATION ─── */
-      if (isHomepage && heroLogoMark) {
+      /* ─── SCROLL BOLT ANIMATION (desktop only) ─── */
+      if (isHomepage && scrollBolt && isDesktop()) {
+
+        // Progress: 0 at top → 1 when scroll reaches 65% of hero height
         var p = Math.min(Math.max(scrollY / (heroH * 0.65), 0), 1);
-        var bigW = window.innerWidth >= 1024 ? 260 : 200;
-        var smallW = window.innerWidth >= 1024 ? 114 : 80;
 
-        heroLogoMark.style.width = (bigW - (bigW - smallW) * p) + 'px';
-        heroLogoMark.style.top = (50 - 45 * p) + '%';
+        // Width: 260px → 114px
+        var w = BIG_W - (BIG_W - SMALL_W) * p;
+        scrollBolt.style.width = w + 'px';
+
+        // Vertical position (viewport coords):
+        //   Start: center of hero (heroH/2 - scrollY = visual center)
+        //   End: nav bolt position (~37px from top of viewport)
+        var heroCenter = heroH / 2 - scrollY;
+        var navY = 37; // approximate center of header bolt
+        var topPx = heroCenter + (navY - heroCenter) * p;
+        // Clamp so it never goes above the nav position
+        topPx = Math.max(topPx, navY);
+        scrollBolt.style.top = topPx + 'px';
+
+        // Color: white (rgb 255,255,255) → red (rgb 255,0,0)
         var gb = Math.round(255 * (1 - p));
-        heroLogoMark.style.color = 'rgb(255,' + gb + ',' + gb + ')';
+        scrollBolt.style.color = 'rgb(255,' + gb + ',' + gb + ')';
 
-        // Crossfade: large bolt out → header bolt in
-        var crossfade = Math.min(Math.max((p - 0.85) / 0.15, 0), 1);
-        heroLogoMark.style.opacity = (1 - crossfade).toString();
-        if (heroHeaderBolt) {
-          heroHeaderBolt.style.opacity = crossfade.toString();
-        }
+        // Visibility: show scrollBolt, keep header bolt hidden
+        scrollBolt.style.opacity = '1';
+        scrollBolt.style.display = 'block';
 
+        // Once past hero, hide the scroll bolt and show the header bolt
+        // (the header bolt is in the fixed header, so it persists)
         if (pastHero) {
-          heroLogoMark.style.visibility = 'hidden';
+          scrollBolt.style.display = 'none';
+          if (heroHeaderBolt) heroHeaderBolt.style.opacity = '1';
         } else {
-          heroLogoMark.style.visibility = 'visible';
+          if (heroHeaderBolt) heroHeaderBolt.style.opacity = '0';
         }
+
+      } else if (isHomepage && scrollBolt && !isDesktop()) {
+        // Mobile: hide scroll bolt, hide header bolt
+        scrollBolt.style.display = 'none';
+        if (heroHeaderBolt) heroHeaderBolt.style.opacity = '0';
       }
 
-      /* ─── SITE HEADER: dwell + dismiss ─── */
+      /* ─── SITE HEADER: transparent nav dismiss + sticky nav ─── */
       if (isHomepage && siteHeader) {
 
         if (inHero) {
-          // Back in hero: reset header, hide sticky nav
+          // In hero: transparent header visible, no sticky nav
           if (headerDismissed) {
             siteHeader.classList.remove('is-dismissing', 'is-hidden');
             headerDismissed = false;
-            dismissStartedAt = 0;
-            dismissScrollOrigin = -1;
           }
           if (stickyNavVisible) {
             stickyNav.setAttribute('data-visible', 'false');
@@ -1081,27 +1120,15 @@
           }
 
         } else if (pastHero && !headerDismissed) {
-          // Past hero: header is still visible (dwelling)
-          // Start the dismiss clock on first frame past hero
-          if (dismissStartedAt === 0) {
-            dismissStartedAt = now;
-            dismissScrollOrigin = scrollY;
-          }
-
-          // Dismiss after BOTH time and scroll thresholds
-          var elapsed = now - dismissStartedAt;
-          var scrolled = scrollY - dismissScrollOrigin;
-          if (goingDown && elapsed > DWELL_MS && scrolled > DWELL_PX) {
-            siteHeader.classList.add('is-dismissing');
-            headerDismissed = true;
-            // After the slide-away transition, fully hide it
-            setTimeout(function() {
-              siteHeader.classList.add('is-hidden');
-            }, 400);
-          }
+          // Just passed hero bottom — dismiss transparent header immediately
+          siteHeader.classList.add('is-dismissing');
+          headerDismissed = true;
+          setTimeout(function() {
+            siteHeader.classList.add('is-hidden');
+          }, 350);
 
         } else if (pastHero && headerDismissed) {
-          // Header is gone — sticky nav territory
+          // Past hero, header gone — sticky nav on scroll up
           if (goingUp && !stickyNavVisible) {
             stickyNav.setAttribute('data-visible', 'true');
             stickyNavVisible = true;
@@ -1135,6 +1162,12 @@
 
     var ticking = false;
     window.addEventListener('scroll', function() {
+      if (!ticking) {
+        requestAnimationFrame(function() { updateNav(); ticking = false; });
+        ticking = true;
+      }
+    });
+    window.addEventListener('resize', function() {
       if (!ticking) {
         requestAnimationFrame(function() { updateNav(); ticking = false; });
         ticking = true;
