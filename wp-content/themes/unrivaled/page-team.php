@@ -1,57 +1,64 @@
+<?php
+/**
+ * Template Name: Team Page
+ * Team page template for Unrivaled Sports.
+ */
+$assets = get_theme_file_uri( "assets/" );
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Unrivaled Sports — Team</title>
+  <?php wp_head(); ?>
   <style>
     /* ==========================================================================
        WEB FONTS
        ========================================================================== */
     @font-face {
       font-family: 'Review';
-      src: url('fonts/review-bold-webfont.woff2') format('woff2'),
-           url('fonts/review-bold-webfont.woff') format('woff');
+      src: url('<?php echo $assets; ?>fonts/review-bold-webfont.woff2') format('woff2'),
+           url('<?php echo $assets; ?>fonts/review-bold-webfont.woff') format('woff');
       font-weight: 700;
       font-style: normal;
       font-display: swap;
     }
     @font-face {
       font-family: 'Review';
-      src: url('fonts/review-heavy-webfont.woff2') format('woff2'),
-           url('fonts/review-heavy-webfont.woff') format('woff');
+      src: url('<?php echo $assets; ?>fonts/review-heavy-webfont.woff2') format('woff2'),
+           url('<?php echo $assets; ?>fonts/review-heavy-webfont.woff') format('woff');
       font-weight: 800;
       font-style: normal;
       font-display: swap;
     }
     @font-face {
       font-family: 'Review Poster';
-      src: url('fonts/reviewposter-heavy-webfont.woff2') format('woff2'),
-           url('fonts/reviewposter-heavy-webfont.woff') format('woff');
+      src: url('<?php echo $assets; ?>fonts/reviewposter-heavy-webfont.woff2') format('woff2'),
+           url('<?php echo $assets; ?>fonts/reviewposter-heavy-webfont.woff') format('woff');
       font-weight: 800;
       font-style: normal;
       font-display: swap;
     }
     @font-face {
       font-family: 'Neue Plak';
-      src: url('fonts/neue_plak_regular-webfont.woff2') format('woff2'),
-           url('fonts/neue_plak_regular-webfont.woff') format('woff');
+      src: url('<?php echo $assets; ?>fonts/neue_plak_regular-webfont.woff2') format('woff2'),
+           url('<?php echo $assets; ?>fonts/neue_plak_regular-webfont.woff') format('woff');
       font-weight: 400;
       font-style: normal;
       font-display: swap;
     }
     @font-face {
       font-family: 'Neue Plak';
-      src: url('fonts/neue_plak_bold-webfont.woff2') format('woff2'),
-           url('fonts/neue_plak_bold-webfont.woff') format('woff');
+      src: url('<?php echo $assets; ?>fonts/neue_plak_bold-webfont.woff2') format('woff2'),
+           url('<?php echo $assets; ?>fonts/neue_plak_bold-webfont.woff') format('woff');
       font-weight: 700;
       font-style: normal;
       font-display: swap;
     }
     @font-face {
       font-family: 'Neue Plak Text';
-      src: url('fonts/neue_plak_regular-webfont.woff2') format('woff2'),
-           url('fonts/neue_plak_regular-webfont.woff') format('woff');
+      src: url('<?php echo $assets; ?>fonts/neue_plak_regular-webfont.woff2') format('woff2'),
+           url('<?php echo $assets; ?>fonts/neue_plak_regular-webfont.woff') format('woff');
       font-weight: 400;
       font-style: normal;
       font-display: swap;
@@ -809,11 +816,11 @@
         <button class="mobile-menu__close" aria-label="Close menu" onclick="closeMenu()"></button>
       </div>
       <nav class="mobile-menu__nav">
-        <a href="index.html#about" class="mobile-menu__nav-item" onclick="closeMenu()">About</a>
-        <a href="team.html" class="mobile-menu__nav-item" onclick="closeMenu()">Team</a>
-        <a href="index.html#press" class="mobile-menu__nav-item" onclick="closeMenu()">Press</a>
-        <a href="index.html#contact" class="mobile-menu__nav-item" onclick="closeMenu()">Contact</a>
-        <a href="index.html#careers" class="mobile-menu__nav-item" onclick="closeMenu()">Careers</a>
+        <a href="<?php echo home_url( '/' ); ?>#about" class="mobile-menu__nav-item" onclick="closeMenu()">About</a>
+        <a href="<?php echo home_url( '/team/' ); ?>" class="mobile-menu__nav-item" onclick="closeMenu()">Team</a>
+        <a href="<?php echo home_url( '/' ); ?>#press" class="mobile-menu__nav-item" onclick="closeMenu()">Press</a>
+        <a href="<?php echo home_url( '/' ); ?>#contact" class="mobile-menu__nav-item" onclick="closeMenu()">Contact</a>
+        <a href="<?php echo home_url( '/' ); ?>#careers" class="mobile-menu__nav-item" onclick="closeMenu()">Careers</a>
       </nav>
       <div class="mobile-menu__footer">
         <div class="mobile-menu__footer-col">
@@ -834,25 +841,25 @@
        ================================================================ -->
   <div class="sticky-nav" id="stickyNav" data-visible="false">
     <div class="sticky-nav__inner">
-      <a href="index.html" class="wordmark"><svg viewBox="0 0 166 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.15 16.63C1.78 16.63 0 14.89 0 9.29V0h5.05v9.09c0 2.97.77 3.61 3.51 3.61h.5c2.78 0 3.5-.66 3.5-3.61V0h5.05v9.29c0 5.6-1.77 7.34-8.12 7.34H8.15z" fill="currentColor"/><path d="M40.17 16.39h-7.49L25.42 4.99h-.18v11.4h-4.76V0h7.49l7.26 11.43h.18V0h4.76v16.39z" fill="currentColor"/><path d="M47.99 16.39h-4.96V0h11.08c4.96 0 6.62 1.14 6.62 4.33v.52c0 2.46-.84 3.56-3.09 3.84v.16c2.14.37 3.09.82 3.09 3.84v3.7h-4.98v-3.47c0-1.52-.43-1.94-2.89-1.94h-4.87v5.41zm0-12.72v3.63h5.66c1.53 0 2.09-.37 2.09-1.66v-.14c0-1.43-.59-1.83-2.82-1.83h-4.93z" fill="currentColor"/><path d="M68.57 16.39h-4.96V0h4.96v16.39z" fill="currentColor"/><path d="M83.9 16.39h-6.37L70.25 0h5.76l4.8 11.5h.18L85.84 0h5.35l-7.28 16.39z" fill="currentColor"/><path d="M109.56 16.39h-5.6l-1.41-3.28h-8.33l-1.39 3.28h-5.39L94.72 0h7.53l7.31 16.39zm-11.26-12.83l-2.5 5.85h5.19l-2.5-5.85h-.19z" fill="currentColor"/><path d="M125.69 16.39H111.24V0h4.96v12.27h9.49v4.12z" fill="currentColor"/><path d="M143.89 16.39h-15.34V0h15.34v3.7h-10.38v2.62h10.38v3.73h-10.38v2.65h10.38v3.7z" fill="currentColor"/><path d="M165.03 8.52c0 5.76-2.37 7.87-8.92 7.87h-9.35V0h9.26c6.55 0 9.01 2.13 9.01 7.89v.63zm-13.31-4.66v8.67h3.71c3.89 0 4.55-1.33 4.55-4.19v-.25c0-2.86-.66-4.19-4.55-4.19h-3.71v-.04z" fill="currentColor"/><path d="M8.81 36C4.03 36 .55 34.88 0 31.04h5.28c.43 1.19 1.69 1.41 4.12 1.41 2.76 0 3.73-.42 3.75-1.55v-.19c0-.87-.46-1.27-2.09-1.29l-4.41-.16C2.09 29.07.41 27.83.41 24.67v-.16c0-3.77 2.5-5.37 8.3-5.37h.61c4.73 0 8.1 1.38 8.65 5.18h-5.28c-.36-1.24-1.52-1.61-3.82-1.61-2.64 0-3.41.42-3.41 1.52v.07c0 .87.43 1.27 2.07 1.33l4.39.14c4.55.14 6.23 1.47 6.23 4.54v.16c0 4.12-2.82 5.52-8.56 5.52h-.8z" fill="currentColor"/><path d="M25.71 35.76h-4.96V19.37h10.96c4.91 0 6.73 1.5 6.73 5.62v.47c0 3.86-1.93 5.55-6.73 5.55h-6.01v4.76zm0-12.72v4.31h5.28c2.05 0 2.48-.54 2.48-2.09v-.16c0-1.59-.5-2.06-2.52-2.06h-5.24z" fill="currentColor"/><path d="M49.45 36c-6.55 0-9.12-2.11-9.12-7.87v-1.1c0-5.76 2.57-7.9 9.12-7.9h1.27c6.55 0 9.15 2.13 9.15 7.9v1.1c0 5.76-2.59 7.87-9.15 7.87h-1.27zm.91-3.89c3.82 0 4.46-1.41 4.46-4.19v-.7c0-2.81-.64-4.19-4.46-4.19h-.53c-3.85 0-4.46 1.38-4.46 4.19v.7c0 2.79.61 4.19 4.46 4.19h.53z" fill="currentColor"/><path d="M67.15 35.76h-4.96V19.37h11.08c4.96 0 6.62 1.14 6.62 4.33v.52c0 2.46-.84 3.56-3.1 3.84v.17c2.14.37 3.1.82 3.1 3.84v3.7h-4.98v-3.47c0-1.52-.43-1.94-2.89-1.94h-4.87v5.41zm0-12.72v3.63h5.66c1.53 0 2.1-.37 2.1-1.66v-.14c0-1.43-.59-1.83-2.82-1.83h-4.94z" fill="currentColor"/><path d="M93.52 35.76h-4.96V23.49h-6.68v-4.12h18.37v4.12h-6.73v12.27z" fill="currentColor"/><path d="M110.69 36c-4.78 0-8.26-1.12-8.81-4.96h5.28c.43 1.19 1.69 1.41 4.12 1.41 2.76 0 3.73-.42 3.75-1.55v-.19c0-.87-.46-1.27-2.1-1.29l-4.41-.16c-4.55-.19-6.23-1.43-6.23-4.59v-.16c0-3.77 2.5-5.37 8.3-5.37h.62c4.73 0 8.1 1.38 8.65 5.18h-5.28c-.36-1.24-1.52-1.62-3.82-1.62-2.64 0-3.41.42-3.41 1.52v.07c0 .87.43 1.27 2.07 1.33l4.39.14c4.55.14 6.23 1.47 6.23 4.54v.16c0 4.12-2.82 5.52-8.56 5.52h-.8z" fill="currentColor"/></svg></a>
+      <a href="<?php echo home_url( '/' ); ?>" class="wordmark"><svg viewBox="0 0 166 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.15 16.63C1.78 16.63 0 14.89 0 9.29V0h5.05v9.09c0 2.97.77 3.61 3.51 3.61h.5c2.78 0 3.5-.66 3.5-3.61V0h5.05v9.29c0 5.6-1.77 7.34-8.12 7.34H8.15z" fill="currentColor"/><path d="M40.17 16.39h-7.49L25.42 4.99h-.18v11.4h-4.76V0h7.49l7.26 11.43h.18V0h4.76v16.39z" fill="currentColor"/><path d="M47.99 16.39h-4.96V0h11.08c4.96 0 6.62 1.14 6.62 4.33v.52c0 2.46-.84 3.56-3.09 3.84v.16c2.14.37 3.09.82 3.09 3.84v3.7h-4.98v-3.47c0-1.52-.43-1.94-2.89-1.94h-4.87v5.41zm0-12.72v3.63h5.66c1.53 0 2.09-.37 2.09-1.66v-.14c0-1.43-.59-1.83-2.82-1.83h-4.93z" fill="currentColor"/><path d="M68.57 16.39h-4.96V0h4.96v16.39z" fill="currentColor"/><path d="M83.9 16.39h-6.37L70.25 0h5.76l4.8 11.5h.18L85.84 0h5.35l-7.28 16.39z" fill="currentColor"/><path d="M109.56 16.39h-5.6l-1.41-3.28h-8.33l-1.39 3.28h-5.39L94.72 0h7.53l7.31 16.39zm-11.26-12.83l-2.5 5.85h5.19l-2.5-5.85h-.19z" fill="currentColor"/><path d="M125.69 16.39H111.24V0h4.96v12.27h9.49v4.12z" fill="currentColor"/><path d="M143.89 16.39h-15.34V0h15.34v3.7h-10.38v2.62h10.38v3.73h-10.38v2.65h10.38v3.7z" fill="currentColor"/><path d="M165.03 8.52c0 5.76-2.37 7.87-8.92 7.87h-9.35V0h9.26c6.55 0 9.01 2.13 9.01 7.89v.63zm-13.31-4.66v8.67h3.71c3.89 0 4.55-1.33 4.55-4.19v-.25c0-2.86-.66-4.19-4.55-4.19h-3.71v-.04z" fill="currentColor"/><path d="M8.81 36C4.03 36 .55 34.88 0 31.04h5.28c.43 1.19 1.69 1.41 4.12 1.41 2.76 0 3.73-.42 3.75-1.55v-.19c0-.87-.46-1.27-2.09-1.29l-4.41-.16C2.09 29.07.41 27.83.41 24.67v-.16c0-3.77 2.5-5.37 8.3-5.37h.61c4.73 0 8.1 1.38 8.65 5.18h-5.28c-.36-1.24-1.52-1.61-3.82-1.61-2.64 0-3.41.42-3.41 1.52v.07c0 .87.43 1.27 2.07 1.33l4.39.14c4.55.14 6.23 1.47 6.23 4.54v.16c0 4.12-2.82 5.52-8.56 5.52h-.8z" fill="currentColor"/><path d="M25.71 35.76h-4.96V19.37h10.96c4.91 0 6.73 1.5 6.73 5.62v.47c0 3.86-1.93 5.55-6.73 5.55h-6.01v4.76zm0-12.72v4.31h5.28c2.05 0 2.48-.54 2.48-2.09v-.16c0-1.59-.5-2.06-2.52-2.06h-5.24z" fill="currentColor"/><path d="M49.45 36c-6.55 0-9.12-2.11-9.12-7.87v-1.1c0-5.76 2.57-7.9 9.12-7.9h1.27c6.55 0 9.15 2.13 9.15 7.9v1.1c0 5.76-2.59 7.87-9.15 7.87h-1.27zm.91-3.89c3.82 0 4.46-1.41 4.46-4.19v-.7c0-2.81-.64-4.19-4.46-4.19h-.53c-3.85 0-4.46 1.38-4.46 4.19v.7c0 2.79.61 4.19 4.46 4.19h.53z" fill="currentColor"/><path d="M67.15 35.76h-4.96V19.37h11.08c4.96 0 6.62 1.14 6.62 4.33v.52c0 2.46-.84 3.56-3.1 3.84v.17c2.14.37 3.1.82 3.1 3.84v3.7h-4.98v-3.47c0-1.52-.43-1.94-2.89-1.94h-4.87v5.41zm0-12.72v3.63h5.66c1.53 0 2.1-.37 2.1-1.66v-.14c0-1.43-.59-1.83-2.82-1.83h-4.94z" fill="currentColor"/><path d="M93.52 35.76h-4.96V23.49h-6.68v-4.12h18.37v4.12h-6.73v12.27z" fill="currentColor"/><path d="M110.69 36c-4.78 0-8.26-1.12-8.81-4.96h5.28c.43 1.19 1.69 1.41 4.12 1.41 2.76 0 3.73-.42 3.75-1.55v-.19c0-.87-.46-1.27-2.1-1.29l-4.41-.16c-4.55-.19-6.23-1.43-6.23-4.59v-.16c0-3.77 2.5-5.37 8.3-5.37h.62c4.73 0 8.1 1.38 8.65 5.18h-5.28c-.36-1.24-1.52-1.62-3.82-1.62-2.64 0-3.41.42-3.41 1.52v.07c0 .87.43 1.27 2.07 1.33l4.39.14c4.55.14 6.23 1.47 6.23 4.54v.16c0 4.12-2.82 5.52-8.56 5.52h-.8z" fill="currentColor"/></svg></a>
       <div class="sticky-nav__logo-mark logo-mark"><svg viewBox="0 0 114 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M41.1496 25.4067C43.7944 24.725 44.6802 25.9381 43.1163 28.1029C41.3111 30.6009 42.2661 31.7935 45.2358 30.7529L114 6.64983H65.0739C64.3461 6.64983 63.3787 7.09578 62.9207 7.63911L50.2539 22.7174C49.5474 23.5341 48.9385 23.177 49.5119 22.2236L60.7694 3.6786C61.9977 1.65562 61.0108 0 58.5754 0H24.2651L0 36L41.1496 25.405V25.4067Z" fill="currentColor"/></svg></div>
       <nav class="sticky-nav__links">
-        <a href="index.html#about" class="sticky-nav__link">About</a>
-        <a href="team.html" class="sticky-nav__link">Team</a>
-        <a href="index.html#press" class="sticky-nav__link">Press</a>
-        <a href="index.html#contact" class="sticky-nav__link">Contact</a>
-        <a href="index.html#careers" class="sticky-nav__link">Careers</a>
+        <a href="<?php echo home_url( '/' ); ?>#about" class="sticky-nav__link">About</a>
+        <a href="<?php echo home_url( '/team/' ); ?>" class="sticky-nav__link">Team</a>
+        <a href="<?php echo home_url( '/' ); ?>#press" class="sticky-nav__link">Press</a>
+        <a href="<?php echo home_url( '/' ); ?>#contact" class="sticky-nav__link">Contact</a>
+        <a href="<?php echo home_url( '/' ); ?>#careers" class="sticky-nav__link">Careers</a>
       </nav>
       <button class="hamburger" aria-label="Open menu" onclick="openMenu()"><span class="hamburger__bar"></span><span class="hamburger__bar"></span><span class="hamburger__bar"></span></button>
     </div>
   </div>
   <!-- TEAM HERO -->
   <section class="team-hero" id="teamHero">
-    <div class="team-hero__media"><img src="images/TeamHero.webp" alt="Sports venue aerial view"></div>
+    <div class="team-hero__media"><img src="<?php echo $assets; ?>images/TeamHero.webp" alt="Sports venue aerial view"></div>
     <header class="site-header"><div class="site-header__inner">
-      <a href="index.html" class="wordmark" style="color:var(--color-red)"><svg viewBox="0 0 166 36" xmlns="http://www.w3.org/2000/svg"><path d="M8.15 16.63C1.78 16.63 0 14.89 0 9.29V0h5.05v9.09c0 2.97.77 3.61 3.51 3.61h.5c2.78 0 3.5-.66 3.5-3.61V0h5.05v9.29c0 5.6-1.77 7.34-8.12 7.34H8.15z" fill="currentColor"/><path d="M40.17 16.39h-7.49L25.42 4.99h-.18v11.4h-4.76V0h7.49l7.26 11.43h.18V0h4.76v16.39z" fill="currentColor"/><path d="M47.99 16.39h-4.96V0h11.08c4.96 0 6.62 1.14 6.62 4.33v.52c0 2.46-.84 3.56-3.09 3.84v.16c2.14.37 3.09.82 3.09 3.84v3.7h-4.98v-3.47c0-1.52-.43-1.94-2.89-1.94h-4.87v5.41zm0-12.72v3.63h5.66c1.53 0 2.09-.37 2.09-1.66v-.14c0-1.43-.59-1.83-2.82-1.83h-4.93z" fill="currentColor"/><path d="M68.57 16.39h-4.96V0h4.96v16.39z" fill="currentColor"/><path d="M83.9 16.39h-6.37L70.25 0h5.76l4.8 11.5h.18L85.84 0h5.35l-7.28 16.39z" fill="currentColor"/><path d="M109.56 16.39h-5.6l-1.41-3.28h-8.33l-1.39 3.28h-5.39L94.72 0h7.53l7.31 16.39zm-11.26-12.83l-2.5 5.85h5.19l-2.5-5.85h-.19z" fill="currentColor"/><path d="M125.69 16.39H111.24V0h4.96v12.27h9.49v4.12z" fill="currentColor"/><path d="M143.89 16.39h-15.34V0h15.34v3.7h-10.38v2.62h10.38v3.73h-10.38v2.65h10.38v3.7z" fill="currentColor"/><path d="M165.03 8.52c0 5.76-2.37 7.87-8.92 7.87h-9.35V0h9.26c6.55 0 9.01 2.13 9.01 7.89v.63zm-13.31-4.66v8.67h3.71c3.89 0 4.55-1.33 4.55-4.19v-.25c0-2.86-.66-4.19-4.55-4.19h-3.71v-.04z" fill="currentColor"/><path d="M8.81 36C4.03 36 .55 34.88 0 31.04h5.28c.43 1.19 1.69 1.41 4.12 1.41 2.76 0 3.73-.42 3.75-1.55v-.19c0-.87-.46-1.27-2.09-1.29l-4.41-.16C2.09 29.07.41 27.83.41 24.67v-.16c0-3.77 2.5-5.37 8.3-5.37h.61c4.73 0 8.1 1.38 8.65 5.18h-5.28c-.36-1.24-1.52-1.61-3.82-1.61-2.64 0-3.41.42-3.41 1.52v.07c0 .87.43 1.27 2.07 1.33l4.39.14c4.55.14 6.23 1.47 6.23 4.54v.16c0 4.12-2.82 5.52-8.56 5.52h-.8z" fill="currentColor"/><path d="M25.71 35.76h-4.96V19.37h10.96c4.91 0 6.73 1.5 6.73 5.62v.47c0 3.86-1.93 5.55-6.73 5.55h-6.01v4.76zm0-12.72v4.31h5.28c2.05 0 2.48-.54 2.48-2.09v-.16c0-1.59-.5-2.06-2.52-2.06h-5.24z" fill="currentColor"/><path d="M49.45 36c-6.55 0-9.12-2.11-9.12-7.87v-1.1c0-5.76 2.57-7.9 9.12-7.9h1.27c6.55 0 9.15 2.13 9.15 7.9v1.1c0 5.76-2.59 7.87-9.15 7.87h-1.27zm.91-3.89c3.82 0 4.46-1.41 4.46-4.19v-.7c0-2.81-.64-4.19-4.46-4.19h-.53c-3.85 0-4.46 1.38-4.46 4.19v.7c0 2.79.61 4.19 4.46 4.19h.53z" fill="currentColor"/><path d="M67.15 35.76h-4.96V19.37h11.08c4.96 0 6.62 1.14 6.62 4.33v.52c0 2.46-.84 3.56-3.1 3.84v.17c2.14.37 3.1.82 3.1 3.84v3.7h-4.98v-3.47c0-1.52-.43-1.94-2.89-1.94h-4.87v5.41zm0-12.72v3.63h5.66c1.53 0 2.1-.37 2.1-1.66v-.14c0-1.43-.59-1.83-2.82-1.83h-4.94z" fill="currentColor"/><path d="M93.52 35.76h-4.96V23.49h-6.68v-4.12h18.37v4.12h-6.73v12.27z" fill="currentColor"/><path d="M110.69 36c-4.78 0-8.26-1.12-8.81-4.96h5.28c.43 1.19 1.69 1.41 4.12 1.41 2.76 0 3.73-.42 3.75-1.55v-.19c0-.87-.46-1.27-2.1-1.29l-4.41-.16c-4.55-.19-6.23-1.43-6.23-4.59v-.16c0-3.77 2.5-5.37 8.3-5.37h.62c4.73 0 8.1 1.38 8.65 5.18h-5.28c-.36-1.24-1.52-1.62-3.82-1.62-2.64 0-3.41.42-3.41 1.52v.07c0 .87.43 1.27 2.07 1.33l4.39.14c4.55.14 6.23 1.47 6.23 4.54v.16c0 4.12-2.82 5.52-8.56 5.52h-.8z" fill="currentColor"/></svg></a>
+      <a href="<?php echo home_url( '/' ); ?>" class="wordmark" style="color:var(--color-red)"><svg viewBox="0 0 166 36" xmlns="http://www.w3.org/2000/svg"><path d="M8.15 16.63C1.78 16.63 0 14.89 0 9.29V0h5.05v9.09c0 2.97.77 3.61 3.51 3.61h.5c2.78 0 3.5-.66 3.5-3.61V0h5.05v9.29c0 5.6-1.77 7.34-8.12 7.34H8.15z" fill="currentColor"/><path d="M40.17 16.39h-7.49L25.42 4.99h-.18v11.4h-4.76V0h7.49l7.26 11.43h.18V0h4.76v16.39z" fill="currentColor"/><path d="M47.99 16.39h-4.96V0h11.08c4.96 0 6.62 1.14 6.62 4.33v.52c0 2.46-.84 3.56-3.09 3.84v.16c2.14.37 3.09.82 3.09 3.84v3.7h-4.98v-3.47c0-1.52-.43-1.94-2.89-1.94h-4.87v5.41zm0-12.72v3.63h5.66c1.53 0 2.09-.37 2.09-1.66v-.14c0-1.43-.59-1.83-2.82-1.83h-4.93z" fill="currentColor"/><path d="M68.57 16.39h-4.96V0h4.96v16.39z" fill="currentColor"/><path d="M83.9 16.39h-6.37L70.25 0h5.76l4.8 11.5h.18L85.84 0h5.35l-7.28 16.39z" fill="currentColor"/><path d="M109.56 16.39h-5.6l-1.41-3.28h-8.33l-1.39 3.28h-5.39L94.72 0h7.53l7.31 16.39zm-11.26-12.83l-2.5 5.85h5.19l-2.5-5.85h-.19z" fill="currentColor"/><path d="M125.69 16.39H111.24V0h4.96v12.27h9.49v4.12z" fill="currentColor"/><path d="M143.89 16.39h-15.34V0h15.34v3.7h-10.38v2.62h10.38v3.73h-10.38v2.65h10.38v3.7z" fill="currentColor"/><path d="M165.03 8.52c0 5.76-2.37 7.87-8.92 7.87h-9.35V0h9.26c6.55 0 9.01 2.13 9.01 7.89v.63zm-13.31-4.66v8.67h3.71c3.89 0 4.55-1.33 4.55-4.19v-.25c0-2.86-.66-4.19-4.55-4.19h-3.71v-.04z" fill="currentColor"/><path d="M8.81 36C4.03 36 .55 34.88 0 31.04h5.28c.43 1.19 1.69 1.41 4.12 1.41 2.76 0 3.73-.42 3.75-1.55v-.19c0-.87-.46-1.27-2.09-1.29l-4.41-.16C2.09 29.07.41 27.83.41 24.67v-.16c0-3.77 2.5-5.37 8.3-5.37h.61c4.73 0 8.1 1.38 8.65 5.18h-5.28c-.36-1.24-1.52-1.61-3.82-1.61-2.64 0-3.41.42-3.41 1.52v.07c0 .87.43 1.27 2.07 1.33l4.39.14c4.55.14 6.23 1.47 6.23 4.54v.16c0 4.12-2.82 5.52-8.56 5.52h-.8z" fill="currentColor"/><path d="M25.71 35.76h-4.96V19.37h10.96c4.91 0 6.73 1.5 6.73 5.62v.47c0 3.86-1.93 5.55-6.73 5.55h-6.01v4.76zm0-12.72v4.31h5.28c2.05 0 2.48-.54 2.48-2.09v-.16c0-1.59-.5-2.06-2.52-2.06h-5.24z" fill="currentColor"/><path d="M49.45 36c-6.55 0-9.12-2.11-9.12-7.87v-1.1c0-5.76 2.57-7.9 9.12-7.9h1.27c6.55 0 9.15 2.13 9.15 7.9v1.1c0 5.76-2.59 7.87-9.15 7.87h-1.27zm.91-3.89c3.82 0 4.46-1.41 4.46-4.19v-.7c0-2.81-.64-4.19-4.46-4.19h-.53c-3.85 0-4.46 1.38-4.46 4.19v.7c0 2.79.61 4.19 4.46 4.19h.53z" fill="currentColor"/><path d="M67.15 35.76h-4.96V19.37h11.08c4.96 0 6.62 1.14 6.62 4.33v.52c0 2.46-.84 3.56-3.1 3.84v.17c2.14.37 3.1.82 3.1 3.84v3.7h-4.98v-3.47c0-1.52-.43-1.94-2.89-1.94h-4.87v5.41zm0-12.72v3.63h5.66c1.53 0 2.1-.37 2.1-1.66v-.14c0-1.43-.59-1.83-2.82-1.83h-4.94z" fill="currentColor"/><path d="M93.52 35.76h-4.96V23.49h-6.68v-4.12h18.37v4.12h-6.73v12.27z" fill="currentColor"/><path d="M110.69 36c-4.78 0-8.26-1.12-8.81-4.96h5.28c.43 1.19 1.69 1.41 4.12 1.41 2.76 0 3.73-.42 3.75-1.55v-.19c0-.87-.46-1.27-2.1-1.29l-4.41-.16c-4.55-.19-6.23-1.43-6.23-4.59v-.16c0-3.77 2.5-5.37 8.3-5.37h.62c4.73 0 8.1 1.38 8.65 5.18h-5.28c-.36-1.24-1.52-1.62-3.82-1.62-2.64 0-3.41.42-3.41 1.52v.07c0 .87.43 1.27 2.07 1.33l4.39.14c4.55.14 6.23 1.47 6.23 4.54v.16c0 4.12-2.82 5.52-8.56 5.52h-.8z" fill="currentColor"/></svg></a>
       <div class="site-header__logo-mark logo-mark logo-mark--sm" style="color:var(--color-red)"><svg viewBox="0 0 434 142" xmlns="http://www.w3.org/2000/svg"><path d="M156.655 100.212C166.722 97.528 170.092 102.311 164.142 110.846C157.271 120.702 160.903 125.403 172.211 121.297L434 26.2306H247.736C244.967 26.2306 241.277 27.986 239.541 30.1332L191.322 89.6114C188.635 92.8322 186.312 91.4249 188.495 87.6673L231.346 14.5129C236.025 6.52863 232.267 0 222.996 0H92.3755L0 142L156.655 100.212Z" fill="currentColor"/></svg></div>
-      <nav class="site-header__nav"><a href="index.html#about" class="site-header__nav-link">About</a><a href="team.html" class="site-header__nav-link" aria-current="page">Team</a><a href="index.html#press" class="site-header__nav-link">Press</a><a href="index.html#contact" class="site-header__nav-link">Contact</a><a href="index.html#careers" class="site-header__nav-link">Careers</a></nav>
+      <nav class="site-header__nav"><a href="<?php echo home_url( '/' ); ?>#about" class="site-header__nav-link">About</a><a href="<?php echo home_url( '/team/' ); ?>" class="site-header__nav-link" aria-current="page">Team</a><a href="<?php echo home_url( '/' ); ?>#press" class="site-header__nav-link">Press</a><a href="<?php echo home_url( '/' ); ?>#contact" class="site-header__nav-link">Contact</a><a href="<?php echo home_url( '/' ); ?>#careers" class="site-header__nav-link">Careers</a></nav>
       <button class="hamburger" aria-label="Open menu" onclick="openMenu()"><span class="hamburger__bar"></span><span class="hamburger__bar"></span><span class="hamburger__bar"></span></button>
     </div></header>
   </section>
@@ -923,7 +930,7 @@
   <footer class="site-footer" id="contact">
     <div class="site-footer__inner">
       <div class="site-footer__main">
-        <div class="site-footer__logo"><a href="index.html" class="wordmark"><svg width="335" height="200" viewBox="0 0 335 200" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_ft)"><path d="M17.04 160.08C4.14 160.08.55 156.58.55 145.3V126.57h10.22v18.31c0 5.99 1.56 7.27 7.09 7.27h1.01c5.62 0 7.09-1.32 7.09-6.27v-19.31h10.22v18.73c0 11.28-3.59 14.78-16.44 14.78h-2.72z" fill="white"/><path d="M81.82 159.6H66.67L51.99 136.62h-.37v22.98H41.99V126.56h15.15l14.68 23.03h.37v-23.03h9.62v33.04z" fill="white"/><path d="M97.65 159.6h-10.04V126.56h22.42c10.04 0 13.4 2.31 13.4 8.73v1.04c0 4.95-1.7 7.17-5.56 7.51v.33c4.33.75 5.56 1.65 5.56 7.75v7.46h-10.08v-6.99c0-3.06-.87-3.92-5.85-3.92h-9.86v10.9zm0-25.63v7.32h11.46c3.09 0 4.24-.75 4.24-3.35v-.28c0-2.88-1.2-3.68-5.7-3.68H97.65z" fill="white"/><path d="M139.29 159.6h-10.04V126.56h10.04v33.04z" fill="white"/><path d="M170.3 159.6h-12.89l-14.74-33.04h11.65l9.72 23.18h.37l9.8-23.18h10.82L170.3 159.6z" fill="white"/><path d="M222.22 159.6h-11.32l-2.85-6.61h-16.85l-2.81 6.61h-10.91l14.74-33.04h15.24l14.78 33.04zm-22.79-25.86l-5.06 11.79h10.5l-5.06-11.79h-.38z" fill="white"/><path d="M254.85 159.6h-29.24V126.56h10.04v24.74h19.2v8.31z" fill="white"/><path d="M291.69 159.6H260.66V126.56h31.03v7.45h-20.99v5.28h20.99v7.51h-20.99v5.33h20.99v7.47z" fill="white"/><path d="M334.47 143.74c0 11.61-4.79 15.85-18.05 15.85h-18.92V126.56h18.74c13.25 0 18.22 4.29 18.22 15.91v1.27zm-26.94-9.39v17.46h7.51c7.87 0 9.21-2.69 9.21-8.44v-.52c0-5.76-1.34-8.5-9.21-8.5h-7.51z" fill="white"/><path d="M17.82 199.1c-9.66 0-16.71-2.27-17.82-10v-.01h10.68c.87 2.41 3.41 2.83 8.33 2.83 5.58 0 7.55-.85 7.6-3.12v-.38c0-1.74-.93-2.55-4.24-2.59l-8.93-.33c-9.21-.38-12.61-2.88-12.61-9.25v-.33c0-7.6 5.06-10.81 16.8-10.81h1.24c9.58 0 16.39 2.78 17.49 10.43h-10.68c-.74-2.5-3.09-3.25-7.74-3.25-5.34 0-6.91.85-6.91 3.06v.13c0 1.75.87 2.55 4.19 2.69l8.89.28c9.21.28 12.61 2.97 12.61 9.17v.33c0 8.31-5.72 11.16-17.32 11.16h-1.62z" fill="white"/><path d="M52.03 198.63H41.99v-33.04h22.18c9.94 0 13.63 3.02 13.63 11.32v.95c0 7.79-3.91 11.19-13.63 11.19H52.03v5.58zm0-25.62v8.68h10.68c4.15 0 5.02-1.08 5.02-3.73v-.33c0-3.21-.5-4.62-6.06-4.62H52.03z" fill="white"/><path d="M99.87 199.11c-13.26 0-18.46-4.25-18.46-15.85v-2.22c0-11.61 5.2-15.91 18.46-15.91h2.58c13.26 0 18.51 4.29 18.51 15.91v2.22c0 11.61-5.25 15.85-18.51 15.85h-2.58zm1.85-7.84c7.73 0 9.03-2.84 9.03-7.66v-1.42c0-5.67-1.29-8.45-9.03-8.45h-1.06c-7.79 0-9.03 2.78-9.03 8.45v1.42c0 4.82 1.24 7.66 9.03 7.66h1.06z" fill="white"/><path d="M135.69 198.63h-10.04V165.59h22.42c10.04 0 13.4 2.31 13.4 8.73v1.04c0 4.96-1.7 7.18-6.27 7.73v.34c4.33.75 6.27 1.65 6.27 7.75v7.46h-10.08v-6.99c0-3.06-.87-3.92-5.84-3.92h-9.86v10.9zm0-25.62v7.32h11.46c3.09 0 4.24-.75 4.24-3.35v-.28c0-2.88-1.2-3.69-5.7-3.69h-10z" fill="white"/><path d="M188.87 198.63h-10.04v-24.74h-13.52v-8.3h37.17v8.3h-13.61v24.74z" fill="white"/><path d="M223.78 199.1c-9.66 0-16.72-2.27-17.82-10h10.68c.87 2.41 3.41 2.83 8.34 2.83 5.58 0 7.55-.85 7.6-3.12v-.38c0-1.74-.93-2.55-4.24-2.59l-8.93-.33c-9.21-.38-12.61-2.88-12.61-9.25v-.33c0-7.6 5.06-10.81 16.8-10.81h1.24c9.58 0 16.39 2.78 17.49 10.43h-10.68c-.74-2.5-3.09-3.25-7.74-3.25-5.34 0-6.91.85-6.91 3.06v.13c0 1.75.87 2.55 4.19 2.69l8.89.28c9.21.28 12.61 2.97 12.61 9.17v.33c0 8.31-5.72 11.16-17.32 11.16h-1.62z" fill="white"/><path d="M120.53 77.31c7.75-2.07 10.34 1.62 5.76 8.2-6.87 9.86-3.24 14.56 8.07 10.45L334 20.23H190.61c-2.13 0-4.97 1.35-6.31 3.01l-47.1 59.89c-2.07 2.48-3.86 1.4-2.18-1.46l42.97-56.44c3.6-6.16.71-11.19-6.42-11.19H71.08L0 109.55l120.53-32.24z" fill="#FF0000"/></g><defs><clipPath id="clip0_ft"><rect width="334.458" height="199.115" fill="white"/></clipPath></defs></svg></a></div>
+        <div class="site-footer__logo"><a href="<?php echo home_url( '/' ); ?>" class="wordmark"><svg width="335" height="200" viewBox="0 0 335 200" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_ft)"><path d="M17.04 160.08C4.14 160.08.55 156.58.55 145.3V126.57h10.22v18.31c0 5.99 1.56 7.27 7.09 7.27h1.01c5.62 0 7.09-1.32 7.09-6.27v-19.31h10.22v18.73c0 11.28-3.59 14.78-16.44 14.78h-2.72z" fill="white"/><path d="M81.82 159.6H66.67L51.99 136.62h-.37v22.98H41.99V126.56h15.15l14.68 23.03h.37v-23.03h9.62v33.04z" fill="white"/><path d="M97.65 159.6h-10.04V126.56h22.42c10.04 0 13.4 2.31 13.4 8.73v1.04c0 4.95-1.7 7.17-5.56 7.51v.33c4.33.75 5.56 1.65 5.56 7.75v7.46h-10.08v-6.99c0-3.06-.87-3.92-5.85-3.92h-9.86v10.9zm0-25.63v7.32h11.46c3.09 0 4.24-.75 4.24-3.35v-.28c0-2.88-1.2-3.68-5.7-3.68H97.65z" fill="white"/><path d="M139.29 159.6h-10.04V126.56h10.04v33.04z" fill="white"/><path d="M170.3 159.6h-12.89l-14.74-33.04h11.65l9.72 23.18h.37l9.8-23.18h10.82L170.3 159.6z" fill="white"/><path d="M222.22 159.6h-11.32l-2.85-6.61h-16.85l-2.81 6.61h-10.91l14.74-33.04h15.24l14.78 33.04zm-22.79-25.86l-5.06 11.79h10.5l-5.06-11.79h-.38z" fill="white"/><path d="M254.85 159.6h-29.24V126.56h10.04v24.74h19.2v8.31z" fill="white"/><path d="M291.69 159.6H260.66V126.56h31.03v7.45h-20.99v5.28h20.99v7.51h-20.99v5.33h20.99v7.47z" fill="white"/><path d="M334.47 143.74c0 11.61-4.79 15.85-18.05 15.85h-18.92V126.56h18.74c13.25 0 18.22 4.29 18.22 15.91v1.27zm-26.94-9.39v17.46h7.51c7.87 0 9.21-2.69 9.21-8.44v-.52c0-5.76-1.34-8.5-9.21-8.5h-7.51z" fill="white"/><path d="M17.82 199.1c-9.66 0-16.71-2.27-17.82-10v-.01h10.68c.87 2.41 3.41 2.83 8.33 2.83 5.58 0 7.55-.85 7.6-3.12v-.38c0-1.74-.93-2.55-4.24-2.59l-8.93-.33c-9.21-.38-12.61-2.88-12.61-9.25v-.33c0-7.6 5.06-10.81 16.8-10.81h1.24c9.58 0 16.39 2.78 17.49 10.43h-10.68c-.74-2.5-3.09-3.25-7.74-3.25-5.34 0-6.91.85-6.91 3.06v.13c0 1.75.87 2.55 4.19 2.69l8.89.28c9.21.28 12.61 2.97 12.61 9.17v.33c0 8.31-5.72 11.16-17.32 11.16h-1.62z" fill="white"/><path d="M52.03 198.63H41.99v-33.04h22.18c9.94 0 13.63 3.02 13.63 11.32v.95c0 7.79-3.91 11.19-13.63 11.19H52.03v5.58zm0-25.62v8.68h10.68c4.15 0 5.02-1.08 5.02-3.73v-.33c0-3.21-.5-4.62-6.06-4.62H52.03z" fill="white"/><path d="M99.87 199.11c-13.26 0-18.46-4.25-18.46-15.85v-2.22c0-11.61 5.2-15.91 18.46-15.91h2.58c13.26 0 18.51 4.29 18.51 15.91v2.22c0 11.61-5.25 15.85-18.51 15.85h-2.58zm1.85-7.84c7.73 0 9.03-2.84 9.03-7.66v-1.42c0-5.67-1.29-8.45-9.03-8.45h-1.06c-7.79 0-9.03 2.78-9.03 8.45v1.42c0 4.82 1.24 7.66 9.03 7.66h1.06z" fill="white"/><path d="M135.69 198.63h-10.04V165.59h22.42c10.04 0 13.4 2.31 13.4 8.73v1.04c0 4.96-1.7 7.18-6.27 7.73v.34c4.33.75 6.27 1.65 6.27 7.75v7.46h-10.08v-6.99c0-3.06-.87-3.92-5.84-3.92h-9.86v10.9zm0-25.62v7.32h11.46c3.09 0 4.24-.75 4.24-3.35v-.28c0-2.88-1.2-3.69-5.7-3.69h-10z" fill="white"/><path d="M188.87 198.63h-10.04v-24.74h-13.52v-8.3h37.17v8.3h-13.61v24.74z" fill="white"/><path d="M223.78 199.1c-9.66 0-16.72-2.27-17.82-10h10.68c.87 2.41 3.41 2.83 8.34 2.83 5.58 0 7.55-.85 7.6-3.12v-.38c0-1.74-.93-2.55-4.24-2.59l-8.93-.33c-9.21-.38-12.61-2.88-12.61-9.25v-.33c0-7.6 5.06-10.81 16.8-10.81h1.24c9.58 0 16.39 2.78 17.49 10.43h-10.68c-.74-2.5-3.09-3.25-7.74-3.25-5.34 0-6.91.85-6.91 3.06v.13c0 1.75.87 2.55 4.19 2.69l8.89.28c9.21.28 12.61 2.97 12.61 9.17v.33c0 8.31-5.72 11.16-17.32 11.16h-1.62z" fill="white"/><path d="M120.53 77.31c7.75-2.07 10.34 1.62 5.76 8.2-6.87 9.86-3.24 14.56 8.07 10.45L334 20.23H190.61c-2.13 0-4.97 1.35-6.31 3.01l-47.1 59.89c-2.07 2.48-3.86 1.4-2.18-1.46l42.97-56.44c3.6-6.16.71-11.19-6.42-11.19H71.08L0 109.55l120.53-32.24z" fill="#FF0000"/></g><defs><clipPath id="clip0_ft"><rect width="334.458" height="199.115" fill="white"/></clipPath></defs></svg></a></div>
         <div class="site-footer__col"><p class="site-footer__label">Follow Us</p><a href="#" class="site-footer__link">Facebook</a><a href="#" class="site-footer__link">Instagram</a><a href="#" class="site-footer__link">LinkedIn</a></div>
         <div class="site-footer__col" id="careers"><p class="site-footer__label">Careers</p><a href="#" class="site-footer__link">Overview</a><a href="#" class="site-footer__link">Open Roles</a></div>
         <div class="site-footer__col"><p class="site-footer__label">Contact</p><a href="/cdn-cgi/l/email-protection#01686f676e41746f736877606d646572716e7375722f626e6c" class="site-footer__email"><span class="__cf_email__" data-cfemail="422b2c242d02372c302b34232e272631322d3036316c212d2f">[email&#160;protected]</span></a></div>
@@ -933,7 +940,6 @@
   </footer>
 
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     /* --- Mobile Menu --- */
     const mobileMenu = document.getElementById('mobileMenu');
     function openMenu() {
@@ -993,5 +999,6 @@
       document.querySelectorAll('[data-animate]').forEach(el => el.classList.add('is-visible'));
     }
   </script>
+<?php wp_footer(); ?>
 </body>
 </html>
