@@ -373,18 +373,12 @@ $assets = get_theme_file_uri( "assets/" );
     @media (min-width: 1024px) { .stat-badges { gap: 32px; padding: 80px 40px; } }
 
     .stat-badge__shape {
-      position: relative; width: 100px; height: 106px;
-      clip-path: polygon(0 0, 100% 0, 100% 72%, 50% 100%, 0 72%); overflow: hidden;
+      position: relative; width: 100px; height: 106px; overflow: hidden;
     }
     @media (min-width: 768px) { .stat-badge__shape { width: 160px; height: 170px; } }
     @media (min-width: 1024px) { .stat-badge__shape { width: 224px; height: 238px; } }
 
-    .stat-badge__bg { position: absolute; inset: 0; background-color: var(--color-navy); overflow: hidden; }
-    .stat-badge__bg::before {
-      content: ''; position: absolute; inset: -50%;
-      background: repeating-linear-gradient(-15deg, transparent, transparent 3px, var(--color-red) 3px, var(--color-red) 5px); opacity: 0.7;
-    }
-    .stat-badge__bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(29,36,104,0.3), rgba(29,36,104,0.6)); }
+    .stat-badge__bg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 
     .stat-badge__content {
       position: absolute; inset: 0; display: flex; flex-direction: column;
@@ -392,10 +386,10 @@ $assets = get_theme_file_uri( "assets/" );
     }
     .stat-badge__number {
       font-family: var(--font-display-poster); font-weight: var(--weight-poster-heavy);
-      font-size: 48px; line-height: 0.84; letter-spacing: 1px; text-transform: uppercase; color: var(--color-white);
+      font-size: 38px; line-height: 0.84; text-transform: uppercase; color: var(--color-white);
     }
-    @media (min-width: 768px) { .stat-badge__number { font-size: 78px; } }
-    @media (min-width: 1024px) { .stat-badge__number { font-size: 110px; letter-spacing: 1.1px; } }
+    @media (min-width: 768px) { .stat-badge__number { font-size: 60px; } }
+    @media (min-width: 1024px) { .stat-badge__number { font-size: 82px; } }
 
     .stat-badge__label {
       font-family: var(--font-display); font-weight: var(--weight-bold);
@@ -884,9 +878,9 @@ $assets = get_theme_file_uri( "assets/" );
        ================================================================ -->
   <section class="section-wrapper" data-variant="light">
     <div class="stat-badges" data-animate id="statBadges">
-      <div class="stat-badge"><div class="stat-badge__shape"><div class="stat-badge__bg"></div><div class="stat-badge__content"><span class="stat-badge__number">15</span><span class="stat-badge__label">Venues &<br>Properties</span></div></div></div>
-      <div class="stat-badge"><div class="stat-badge__shape"><div class="stat-badge__bg"></div><div class="stat-badge__content"><span class="stat-badge__number">1.7m</span><span class="stat-badge__label">Visitors<br>Each Year</span></div></div></div>
-      <div class="stat-badge"><div class="stat-badge__shape"><div class="stat-badge__bg"></div><div class="stat-badge__content"><span class="stat-badge__number">635k</span><span class="stat-badge__label">Athletes<br>Annually</span></div></div></div>
+      <div class="stat-badge"><div class="stat-badge__shape"><img class="stat-badge__bg" src="<?php echo $assets; ?>images/stat-badge-bg.svg" alt=""><div class="stat-badge__content"><span class="stat-badge__number">15</span><span class="stat-badge__label">Venues &<br>Properties</span></div></div></div>
+      <div class="stat-badge"><div class="stat-badge__shape"><img class="stat-badge__bg" src="<?php echo $assets; ?>images/stat-badge-bg.svg" alt=""><div class="stat-badge__content"><span class="stat-badge__number">1.7m</span><span class="stat-badge__label">Visitors<br>Each Year</span></div></div></div>
+      <div class="stat-badge"><div class="stat-badge__shape"><img class="stat-badge__bg" src="<?php echo $assets; ?>images/stat-badge-bg.svg" alt=""><div class="stat-badge__content"><span class="stat-badge__number">635k</span><span class="stat-badge__label">Athletes<br>Annually</span></div></div></div>
     </div>
   </section>
 
