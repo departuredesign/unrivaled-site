@@ -5,7 +5,7 @@
     </clipPath>
   </defs>
   <!-- Gold border (stroke centered on path; outer half visible beyond clip) -->
-  <path d="M219.183 182.724L111.5 233.417L3.81737 182.724L3.81738 3.81737L219.183 3.81738Z" fill="none" stroke="#C1A556" stroke-width="7.635"/>
+  <path d="M219.183 182.724L111.5 233.417L3.81737 182.724L3.81738 3.81737L219.183 3.81738Z" fill="none" stroke="#1D2468" stroke-width="7.635"/>
   <!-- Red background + navy stripes, clipped to pentagon interior -->
   <g clip-path="url(#pent)">
     <rect width="223" height="238" fill="#BB0101"/>
