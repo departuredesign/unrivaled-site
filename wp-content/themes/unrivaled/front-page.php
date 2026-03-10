@@ -960,6 +960,7 @@ $assets = get_theme_file_uri( "assets/" );
         <div class="brand-card"><div class="brand-card__image"><img src="<?php echo $assets; ?>images/brands/seek-skate-camp.webp" alt="Seek Skate Camp"></div><p class="brand-card__name">Seek Skate Camp</p><div class="brand-card__divider"></div><a href="#" class="visit-site-link"><svg class="visit-site-link__arrow" viewBox="0 0 23 13"><path d="M22.4262 6.11868L0 12.2325V0L22.4262 6.11868Z" fill="#0162FF"/></svg><span class="visit-site-link__text">Visit Site</span></a><div class="brand-card__divider"></div></div>
         <div class="brand-card"><div class="brand-card__image"><img src="<?php echo $assets; ?>images/brands/milepost-35.webp" alt="Milepost 35"></div><p class="brand-card__name">Milepost 35</p><div class="brand-card__divider"></div><a href="#" class="visit-site-link"><svg class="visit-site-link__arrow" viewBox="0 0 23 13"><path d="M22.4262 6.11868L0 12.2325V0L22.4262 6.11868Z" fill="#0162FF"/></svg><span class="visit-site-link__text">Visit Site</span></a><div class="brand-card__divider"></div></div>
       </div>
+      <div class="brand-grid__load-more is-hidden" id="brandShowLess"><button class="btn" id="brandShowLessBtn">SHOW LESS</button></div>
     </div>
   </section>
 
@@ -1239,14 +1240,27 @@ $assets = get_theme_file_uri( "assets/" );
       document.querySelectorAll('[data-animate]').forEach(function(el) { el.classList.add('is-visible'); });
     }
 
-    /* Brand grid load-more */
+    /* Brand grid load-more / show-less */
     var brandLoadBtn = document.getElementById('brandLoadBtn');
+    var brandShowLessBtn = document.getElementById('brandShowLessBtn');
+    var brandOverflow = document.getElementById('brandGridOverflow');
+    var brandLoadMore = document.getElementById('brandLoadMore');
+    var brandShowLess = document.getElementById('brandShowLess');
+
     if (brandLoadBtn) {
       brandLoadBtn.addEventListener('click', function() {
-        var overflow = document.getElementById('brandGridOverflow');
-        var loadMore = document.getElementById('brandLoadMore');
-        if (overflow) { overflow.classList.add('is-visible'); }
-        if (loadMore) { loadMore.classList.add('is-hidden'); }
+        if (brandOverflow) { brandOverflow.classList.add('is-visible'); }
+        if (brandLoadMore) { brandLoadMore.classList.add('is-hidden'); }
+        if (brandShowLess) { brandShowLess.classList.remove('is-hidden'); }
+      });
+    }
+    if (brandShowLessBtn) {
+      brandShowLessBtn.addEventListener('click', function() {
+        if (brandOverflow) { brandOverflow.classList.remove('is-visible'); }
+        if (brandLoadMore) { brandLoadMore.classList.remove('is-hidden'); }
+        if (brandShowLess) { brandShowLess.classList.add('is-hidden'); }
+        var brandGrid = document.getElementById('brandGrid');
+        if (brandGrid) { brandGrid.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
       });
     }
   </script>
