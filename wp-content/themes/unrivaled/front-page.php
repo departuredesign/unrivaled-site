@@ -528,7 +528,23 @@ $assets = get_theme_file_uri( "assets/" );
       font-size: 11px; line-height: 14px; letter-spacing: 0.44px; color: var(--color-white); margin: 0;
     }
 
+    .brand-grid--overflow { display: none; }
+    .brand-grid--overflow.is-visible { display: grid; }
+    .brand-grid--overflow.is-visible .brand-card { animation: brandFadeIn 500ms var(--ease-out) both; }
+    .brand-grid--overflow.is-visible .brand-card:nth-child(1) { animation-delay: 0ms; }
+    .brand-grid--overflow.is-visible .brand-card:nth-child(2) { animation-delay: 60ms; }
+    .brand-grid--overflow.is-visible .brand-card:nth-child(3) { animation-delay: 120ms; }
+    .brand-grid--overflow.is-visible .brand-card:nth-child(4) { animation-delay: 180ms; }
+    .brand-grid--overflow.is-visible .brand-card:nth-child(5) { animation-delay: 240ms; }
+    .brand-grid--overflow.is-visible .brand-card:nth-child(6) { animation-delay: 300ms; }
+    .brand-grid--overflow.is-visible .brand-card:nth-child(7) { animation-delay: 360ms; }
+    .brand-grid--overflow.is-visible .brand-card:nth-child(8) { animation-delay: 420ms; }
+    .brand-grid--overflow.is-visible .brand-card:nth-child(9) { animation-delay: 480ms; }
+    .brand-grid--overflow.is-visible .brand-card:nth-child(10) { animation-delay: 540ms; }
+    .brand-grid--overflow.is-visible .brand-card:nth-child(11) { animation-delay: 600ms; }
+    @keyframes brandFadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     .brand-grid__load-more { display: flex; justify-content: center; margin-top: 32px; }
+    .brand-grid__load-more.is-hidden { display: none; }
 
 
     /* ==========================================================================
@@ -929,6 +945,9 @@ $assets = get_theme_file_uri( "assets/" );
         <div class="brand-card"><div class="brand-card__image"><img src="<?php echo $assets; ?>images/brands/big-league-dreams.webp" alt="Big League Dreams: Las Vegas &amp; Manteca"></div><p class="brand-card__name">Big League Dreams: Las Vegas &amp; Manteca</p><div class="brand-card__divider"></div><a href="#" class="visit-site-link"><svg class="visit-site-link__arrow" viewBox="0 0 23 13"><path d="M22.4262 6.11868L0 12.2325V0L22.4262 6.11868Z" fill="#0162FF"/></svg><span class="visit-site-link__text">Visit Site</span></a><div class="brand-card__divider"></div></div>
         <div class="brand-card"><div class="brand-card__image"><img src="<?php echo $assets; ?>images/brands/sports-force-park.webp" alt="Sports Force Park"></div><p class="brand-card__name">Sports Force Park</p><div class="brand-card__divider"></div><a href="#" class="visit-site-link"><svg class="visit-site-link__arrow" viewBox="0 0 23 13"><path d="M22.4262 6.11868L0 12.2325V0L22.4262 6.11868Z" fill="#0162FF"/></svg><span class="visit-site-link__text">Visit Site</span></a><div class="brand-card__divider"></div></div>
         <div class="brand-card"><div class="brand-card__image"><img src="<?php echo $assets; ?>images/brands/under-the-lights-flag-football.webp" alt="Under the Lights Flag Football"></div><p class="brand-card__name">Under the Lights Flag Football</p><div class="brand-card__divider"></div><a href="#" class="visit-site-link"><svg class="visit-site-link__arrow" viewBox="0 0 23 13"><path d="M22.4262 6.11868L0 12.2325V0L22.4262 6.11868Z" fill="#0162FF"/></svg><span class="visit-site-link__text">Visit Site</span></a><div class="brand-card__divider"></div></div>
+      </div>
+      <div class="brand-grid__load-more" id="brandLoadMore"><button class="btn" id="brandLoadBtn">LOAD MORE</button></div>
+      <div class="brand-grid brand-grid--overflow" id="brandGridOverflow">
         <div class="brand-card"><div class="brand-card__image"><img src="<?php echo $assets; ?>images/brands/new-england-flag-football.webp" alt="New England Flag Football"></div><p class="brand-card__name">New England Flag Football</p><div class="brand-card__divider"></div><a href="#" class="visit-site-link"><svg class="visit-site-link__arrow" viewBox="0 0 23 13"><path d="M22.4262 6.11868L0 12.2325V0L22.4262 6.11868Z" fill="#0162FF"/></svg><span class="visit-site-link__text">Visit Site</span></a><div class="brand-card__divider"></div></div>
         <div class="brand-card"><div class="brand-card__image"><img src="<?php echo $assets; ?>images/brands/all-american-flag.webp" alt="All American Flag"></div><p class="brand-card__name">All American Flag</p><div class="brand-card__divider"></div><a href="#" class="visit-site-link"><svg class="visit-site-link__arrow" viewBox="0 0 23 13"><path d="M22.4262 6.11868L0 12.2325V0L22.4262 6.11868Z" fill="#0162FF"/></svg><span class="visit-site-link__text">Visit Site</span></a><div class="brand-card__divider"></div></div>
         <div class="brand-card"><div class="brand-card__image"><img src="<?php echo $assets; ?>images/brands/all-ripken.webp" alt="All-Ripken"></div><p class="brand-card__name">All-Ripken</p><div class="brand-card__divider"></div><a href="#" class="visit-site-link"><svg class="visit-site-link__arrow" viewBox="0 0 23 13"><path d="M22.4262 6.11868L0 12.2325V0L22.4262 6.11868Z" fill="#0162FF"/></svg><span class="visit-site-link__text">Visit Site</span></a><div class="brand-card__divider"></div></div>
@@ -941,7 +960,6 @@ $assets = get_theme_file_uri( "assets/" );
         <div class="brand-card"><div class="brand-card__image"><img src="<?php echo $assets; ?>images/brands/seek-skate-camp.webp" alt="Seek Skate Camp"></div><p class="brand-card__name">Seek Skate Camp</p><div class="brand-card__divider"></div><a href="#" class="visit-site-link"><svg class="visit-site-link__arrow" viewBox="0 0 23 13"><path d="M22.4262 6.11868L0 12.2325V0L22.4262 6.11868Z" fill="#0162FF"/></svg><span class="visit-site-link__text">Visit Site</span></a><div class="brand-card__divider"></div></div>
         <div class="brand-card"><div class="brand-card__image"><img src="<?php echo $assets; ?>images/brands/milepost-35.webp" alt="Milepost 35"></div><p class="brand-card__name">Milepost 35</p><div class="brand-card__divider"></div><a href="#" class="visit-site-link"><svg class="visit-site-link__arrow" viewBox="0 0 23 13"><path d="M22.4262 6.11868L0 12.2325V0L22.4262 6.11868Z" fill="#0162FF"/></svg><span class="visit-site-link__text">Visit Site</span></a><div class="brand-card__divider"></div></div>
       </div>
-      <div class="brand-grid__load-more"><button class="btn">LOAD MORE</button></div>
     </div>
   </section>
 
@@ -1219,6 +1237,17 @@ $assets = get_theme_file_uri( "assets/" );
 
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       document.querySelectorAll('[data-animate]').forEach(function(el) { el.classList.add('is-visible'); });
+    }
+
+    /* Brand grid load-more */
+    var brandLoadBtn = document.getElementById('brandLoadBtn');
+    if (brandLoadBtn) {
+      brandLoadBtn.addEventListener('click', function() {
+        var overflow = document.getElementById('brandGridOverflow');
+        var loadMore = document.getElementById('brandLoadMore');
+        if (overflow) { overflow.classList.add('is-visible'); }
+        if (loadMore) { loadMore.classList.add('is-hidden'); }
+      });
     }
   </script>
 <?php wp_footer(); ?>
