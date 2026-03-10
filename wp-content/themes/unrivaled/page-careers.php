@@ -1,7 +1,7 @@
 <?php
 /**
- * Template Name: Team Page
- * Team page template for Unrivaled Sports.
+ * Template Name: Careers Page
+ * Careers page template for Unrivaled Sports.
  */
 $assets = get_theme_file_uri( "assets/" );
 ?>
@@ -448,7 +448,7 @@ $assets = get_theme_file_uri( "assets/" );
 
 
     /* ==========================================================================
-       10–11. BRANDS SECTION
+       10-11. BRANDS SECTION
        ========================================================================== */
     .section-header { margin-bottom: 32px; }
     .section-header__label {
@@ -472,128 +472,6 @@ $assets = get_theme_file_uri( "assets/" );
     .section-header[data-variant="dark"] .section-header__label,
     .section-header[data-variant="dark"] .section-header__headline,
     .section-header[data-variant="dark"] .section-header__desc { color: var(--color-white); }
-
-    .brand-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-    @media (min-width: 768px) { .brand-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
-    @media (min-width: 1024px) { .brand-grid { grid-template-columns: repeat(4, 1fr); gap: 28px; } }
-
-    .brand-grid[data-animate] .brand-card { opacity: 0; transform: translateY(20px); transition: opacity 500ms var(--ease-out), transform 500ms var(--ease-out); }
-    .brand-grid[data-animate].is-visible .brand-card { opacity: 1; transform: translateY(0); }
-    .brand-grid[data-animate].is-visible .brand-card:nth-child(1) { transition-delay: 0ms; }
-    .brand-grid[data-animate].is-visible .brand-card:nth-child(2) { transition-delay: 80ms; }
-    .brand-grid[data-animate].is-visible .brand-card:nth-child(3) { transition-delay: 160ms; }
-    .brand-grid[data-animate].is-visible .brand-card:nth-child(4) { transition-delay: 240ms; }
-    .brand-grid[data-animate].is-visible .brand-card:nth-child(5) { transition-delay: 320ms; }
-    .brand-grid[data-animate].is-visible .brand-card:nth-child(6) { transition-delay: 400ms; }
-    .brand-grid[data-animate].is-visible .brand-card:nth-child(7) { transition-delay: 480ms; }
-    .brand-grid[data-animate].is-visible .brand-card:nth-child(8) { transition-delay: 560ms; }
-
-    .brand-card { display: flex; flex-direction: column; }
-    .brand-card__image {
-      position: relative; width: 100%; aspect-ratio: 321/252; background: var(--color-white);
-      border-radius: var(--radius); overflow: hidden; display: flex; align-items: center; justify-content: center;
-      transition: transform var(--transition-base), box-shadow var(--transition-base);
-    }
-    .brand-card__image img { max-width: 75%; max-height: 70%; object-fit: contain; }
-    .brand-card__overlay { position: absolute; inset: 10% 8%; background-color: var(--color-gold-overlay); mix-blend-mode: screen; pointer-events: none; }
-    @media (hover: hover) { .brand-card:hover .brand-card__image { transform: scale(1.02); box-shadow: 0 4px 20px rgba(0,0,0,0.15); } }
-
-    .brand-card__name {
-      font-family: var(--font-display); font-weight: var(--weight-bold);
-      font-size: 10px; line-height: 11.6px; letter-spacing: 0.3px; color: var(--color-white); margin: 10px 0 0;
-    }
-    @media (min-width: 1024px) { .brand-card__name { font-size: 18px; line-height: 21.2px; letter-spacing: 0.54px; margin-top: 14px; } }
-    .brand-card__divider { width: 100%; height: 1px; background: rgba(255,255,255,0.3); margin: 10px 0; }
-    @media (min-width: 1024px) { .brand-card__divider { margin: 12px 0; } }
-
-    .brand-list { margin-top: 24px; }
-    @media (min-width: 768px) { .brand-list { display: none; } }
-    .brand-list-item {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 10px 0; border-top: 1px solid rgba(255,255,255,0.2);
-    }
-    .brand-list-item:last-child { border-bottom: 1px solid rgba(255,255,255,0.2); }
-    .brand-list-item__name {
-      font-family: var(--font-display); font-weight: var(--weight-bold);
-      font-size: 11px; line-height: 14px; letter-spacing: 0.44px; color: var(--color-white); margin: 0;
-    }
-
-    .brand-grid__load-more { display: flex; justify-content: center; margin-top: 32px; }
-
-
-    /* ==========================================================================
-       12. PRESS SECTION
-       ========================================================================== */
-    .press-header-row { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 30px; }
-    .press-header-row .section-header { margin-bottom: 0; }
-    .press-divider { width: 100%; height: 2px; background: var(--color-black); margin-bottom: 0; }
-
-    .press-track {
-      display: flex; gap: 29px; overflow-x: auto;
-      padding: 40px 40px 60px 0;
-      scrollbar-width: none;
-    }
-    .press-track::-webkit-scrollbar { display: none; }
-
-    .press-card {
-      flex: 0 0 307px; display: flex; flex-direction: column;
-      text-decoration: none; color: inherit;
-      background: #F1F1F1;
-      border-radius: 6px 6px 0 0;
-      overflow: hidden;
-    }
-
-    .press-card__image {
-      width: 100%; aspect-ratio: 338 / 244;
-      border-radius: 6px; overflow: hidden;
-    }
-    .press-card__image img {
-      width: 100%; height: 100%; object-fit: cover; display: block;
-      transition: transform 250ms ease;
-    }
-    .press-card__image .ph { border-radius: 6px; background: #D9D9D9; }
-    .press-card__image .ph::before { display: none; }
-    @media (hover: hover) { .press-card:hover .press-card__image img { transform: scale(1.03); } }
-
-    .press-card__body {
-      padding: 20px 20px 15px;
-      display: flex; flex-direction: column;
-      gap: 47px;
-      flex: 1;
-    }
-    .press-card__title {
-      font-family: var(--font-display); font-weight: 700;
-      font-size: 18px; line-height: 21.2px; letter-spacing: 0.54px;
-      color: #0162FF; margin: 0;
-    }
-    @media (hover: hover) { .press-card:hover .press-card__title { text-decoration: underline; text-underline-offset: 2px; } }
-
-    .press-card__footer {
-      display: flex; flex-direction: column; gap: 12px;
-      margin-top: auto;
-    }
-    .press-card__card-divider {
-      width: 100%; height: 1px; background: rgba(0,0,0,0.25);
-    }
-    .press-card__date {
-      font-family: var(--font-ui); font-weight: 700;
-      font-size: 14px; line-height: 0.85; letter-spacing: 0.84px;
-      text-transform: uppercase; color: #000;
-    }
-
-    .press-card:focus-visible { outline: 2px solid #0162FF; outline-offset: 2px; }
-
-    .arrow-nav { display: none; align-items: center; gap: 4px; }
-    @media (min-width: 1024px) { .arrow-nav { display: flex; } }
-    .arrow-nav__btn {
-      display: flex; align-items: center; justify-content: center;
-      background: none; border: none; cursor: pointer; padding: 0;
-      transition: opacity 150ms ease;
-    }
-    .arrow-nav__btn svg { width: 37px; height: 21px; }
-    .arrow-nav__btn:hover { opacity: 0.7; }
-    .arrow-nav__btn:disabled { opacity: 0.3; cursor: not-allowed; }
-    .arrow-nav__btn--next svg { transform: rotate(180deg); }
 
 
     /* ==========================================================================
@@ -705,7 +583,7 @@ $assets = get_theme_file_uri( "assets/" );
 
 
     /* ==========================================================================
-       PLACEHOLDER IMAGES (for demo — replace with real assets)
+       PLACEHOLDER IMAGES (for demo -- replace with real assets)
        ========================================================================== */
     .ph { display: flex; align-items: center; justify-content: center; font-size: 10px; color: #999; width: 100%; height: 100%; background: #E0E0E0; }
     .ph--1, .ph--2, .ph--3, .ph--4, .ph--5, .ph--6 { background: #E0E0E0; color: #999; }
@@ -721,7 +599,7 @@ $assets = get_theme_file_uri( "assets/" );
   </style>
   <style>
     /* ==========================================================================
-       TEAM PAGE STYLES
+       CAREERS PAGE STYLES
        ========================================================================== */
     .site-header__nav-link[aria-current="page"] { opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
 
@@ -733,53 +611,28 @@ $assets = get_theme_file_uri( "assets/" );
     .team-hero__media::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, transparent 50%); }
     .team-hero .site-header { position: absolute; top: 0; left: 0; width: 100%; z-index: 10; }
 
-    .team-section { background: var(--color-navy); color: var(--color-white); position: relative; overflow: hidden; width: 100%; }
-    .team-section::before, .team-section::after { content: ''; position: absolute; border-radius: 50%; pointer-events: none; background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%); }
-    .team-section::before { width: 800px; height: 800px; top: -200px; right: -200px; }
-    .team-section::after { width: 600px; height: 600px; bottom: -100px; right: 100px; }
-    .team-section__inner { max-width: var(--content-max-width); margin: 0 auto; padding: 48px var(--margin-mobile); position: relative; z-index: 1; }
-    @media (min-width: 768px) { .team-section__inner { padding: 60px 30px; } }
-    @media (min-width: 1024px) { .team-section__inner { padding: 64px var(--margin-desktop); } }
-    .team-section__header { margin-bottom: 32px; }
-    .team-section__headline { font-family: var(--font-display); font-weight: var(--weight-bold); font-size: 22px; line-height: 1.11; letter-spacing: 0.44px; color: var(--color-white); margin: 0 0 16px; }
-    @media (min-width: 1024px) { .team-section__headline { font-size: 32px; line-height: 1.26; letter-spacing: 0.64px; } }
-    .team-section__desc { font-family: var(--font-body); font-weight: var(--weight-regular); font-size: 13px; line-height: 18px; color: var(--color-white); margin: 0; max-width: 856px; }
-    @media (min-width: 1024px) { .team-section__desc { font-size: 24px; line-height: 30px; letter-spacing: -0.4px; } }
-    .team-section__divider { margin: 48px 0; }
-    @media (min-width: 1024px) { .team-section__divider { margin: 80px 0; } }
-
-    .team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-    @media (min-width: 768px) { .team-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; } }
-    @media (min-width: 1024px) { .team-grid { grid-template-columns: repeat(4, 1fr); gap: 27px; } }
-    .team-grid[data-animate] .team-card { opacity: 0; transform: translateY(20px); transition: opacity 500ms var(--ease-out), transform 500ms var(--ease-out); }
-    .team-grid[data-animate].is-visible .team-card { opacity: 1; transform: translateY(0); }
-    .team-grid[data-animate].is-visible .team-card:nth-child(1) { transition-delay: 0ms; }
-    .team-grid[data-animate].is-visible .team-card:nth-child(2) { transition-delay: 60ms; }
-    .team-grid[data-animate].is-visible .team-card:nth-child(3) { transition-delay: 120ms; }
-    .team-grid[data-animate].is-visible .team-card:nth-child(4) { transition-delay: 180ms; }
-    .team-grid[data-animate].is-visible .team-card:nth-child(5) { transition-delay: 240ms; }
-    .team-grid[data-animate].is-visible .team-card:nth-child(6) { transition-delay: 300ms; }
-    .team-grid[data-animate].is-visible .team-card:nth-child(7) { transition-delay: 360ms; }
-    .team-grid[data-animate].is-visible .team-card:nth-child(8) { transition-delay: 420ms; }
-    .team-grid[data-animate].is-visible .team-card:nth-child(n+9) { transition-delay: 480ms; }
-
-    .team-card { display: flex; flex-direction: column; }
-    .team-card__photo { width: 100%; aspect-ratio: 1/1; border-radius: var(--radius); overflow: hidden; background: var(--color-gray-placeholder); transition: transform var(--transition-base), box-shadow var(--transition-base); }
-    .team-card__photo > * { width: 100%; height: 100%; object-fit: cover; display: block; }
-    @media (hover: hover) { .team-card:hover .team-card__photo { transform: scale(1.02); box-shadow: 0 4px 20px rgba(0,0,0,0.2); } }
-    .team-card__name { font-family: var(--font-display); font-weight: var(--weight-bold); font-size: 14px; line-height: 1.2; letter-spacing: 0.42px; color: var(--color-white); margin: 12px 0 0; }
-    @media (min-width: 1024px) { .team-card__name { font-size: 18px; line-height: 21.2px; letter-spacing: 0.54px; margin-top: 16px; } }
-    .team-card__title { font-family: var(--font-ui); font-weight: var(--weight-regular); font-size: 10px; line-height: 14px; letter-spacing: 0.5px; color: var(--color-white); margin: 4px 0 0; }
-    @media (min-width: 1024px) { .team-card__title { font-size: 12px; letter-spacing: 0.6px; } }
-    .team-card__divider { width: 100%; height: 1px; background: rgba(255,255,255,0.2); margin: 10px 0; }
-    .team-card__link { text-decoration: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-ui); font-weight: var(--weight-bold); font-size: 11px; line-height: 0.85; letter-spacing: 0.84px; text-transform: uppercase; color: var(--color-white); transition: opacity var(--transition-fast); }
-    @media (min-width: 1024px) { .team-card__link { font-size: 14px; gap: 8px; } }
-    .team-card__link-arrow { width: 12px; height: 10px; flex-shrink: 0; transition: transform var(--transition-base); fill: none; stroke: currentColor; stroke-width: 1.2; }
-    .team-card__link:hover { opacity: 0.7; }
-    .team-card__link:hover .team-card__link-arrow { transform: translateX(3px); }
-    .team-card__divider--bottom { width: 100%; height: 1px; background: rgba(255,255,255,0.2); margin: 10px 0 0; }
-    .team-card--partner .team-card__photo { background: var(--color-white); display: flex; align-items: center; justify-content: center; }
-    .team-card--partner .team-card__photo > * { max-width: 75%; max-height: 70%; object-fit: contain; width: auto; height: auto; }
+    /* CAREERS SECTION */
+    .careers-section { width: 100%; background: var(--color-white); }
+    .careers-section__inner {
+      width: 100%; max-width: var(--content-max-width); margin: 0 auto;
+      padding: 48px var(--margin-mobile) 60px;
+    }
+    @media (min-width: 1024px) { .careers-section__inner { padding: 48px var(--margin-desktop) 80px; } }
+    .careers-section__header { margin-bottom: 40px; }
+    .careers-section__headline {
+      font-family: var(--font-display); font-weight: var(--weight-poster-heavy);
+      font-size: 32px; line-height: 0.92; letter-spacing: 1.6px;
+      text-transform: uppercase; color: var(--color-navy); margin-bottom: 16px;
+    }
+    @media (min-width: 768px) { .careers-section__headline { font-size: 44px; } }
+    @media (min-width: 1024px) { .careers-section__headline { font-size: 56px; letter-spacing: 2.8px; } }
+    .careers-section__desc {
+      font-family: var(--font-body); font-weight: var(--weight-regular);
+      font-size: 14px; line-height: 1.5; color: var(--color-black);
+      max-width: 600px;
+    }
+    @media (min-width: 768px) { .careers-section__desc { font-size: 16px; } }
+    .careers-section__embed { min-height: 400px; }
 
     .carousel { width: 100%; overflow: hidden; position: relative; padding: 20px 0 40px; }
     .carousel__track { display: flex; gap: 20px; width: max-content; animation: carousel-scroll 25s linear infinite; }
@@ -853,55 +706,26 @@ $assets = get_theme_file_uri( "assets/" );
       <button class="hamburger" aria-label="Open menu" onclick="openMenu()"><span class="hamburger__bar"></span><span class="hamburger__bar"></span><span class="hamburger__bar"></span></button>
     </div>
   </div>
-  <!-- TEAM HERO -->
-  <section class="team-hero" id="teamHero">
+  <!-- CAREERS HERO -->
+  <section class="team-hero" id="careersHero">
     <div class="team-hero__media"><img src="<?php echo $assets; ?>images/TeamHero.webp" alt="Sports venue aerial view"></div>
     <header class="site-header"><div class="site-header__inner">
       <a href="<?php echo home_url( '/' ); ?>" class="wordmark" style="color:var(--color-red)"><svg viewBox="0 0 166 36" xmlns="http://www.w3.org/2000/svg"><path d="M8.15 16.63C1.78 16.63 0 14.89 0 9.29V0h5.05v9.09c0 2.97.77 3.61 3.51 3.61h.5c2.78 0 3.5-.66 3.5-3.61V0h5.05v9.29c0 5.6-1.77 7.34-8.12 7.34H8.15z" fill="currentColor"/><path d="M40.17 16.39h-7.49L25.42 4.99h-.18v11.4h-4.76V0h7.49l7.26 11.43h.18V0h4.76v16.39z" fill="currentColor"/><path d="M47.99 16.39h-4.96V0h11.08c4.96 0 6.62 1.14 6.62 4.33v.52c0 2.46-.84 3.56-3.09 3.84v.16c2.14.37 3.09.82 3.09 3.84v3.7h-4.98v-3.47c0-1.52-.43-1.94-2.89-1.94h-4.87v5.41zm0-12.72v3.63h5.66c1.53 0 2.09-.37 2.09-1.66v-.14c0-1.43-.59-1.83-2.82-1.83h-4.93z" fill="currentColor"/><path d="M68.57 16.39h-4.96V0h4.96v16.39z" fill="currentColor"/><path d="M83.9 16.39h-6.37L70.25 0h5.76l4.8 11.5h.18L85.84 0h5.35l-7.28 16.39z" fill="currentColor"/><path d="M109.56 16.39h-5.6l-1.41-3.28h-8.33l-1.39 3.28h-5.39L94.72 0h7.53l7.31 16.39zm-11.26-12.83l-2.5 5.85h5.19l-2.5-5.85h-.19z" fill="currentColor"/><path d="M125.69 16.39H111.24V0h4.96v12.27h9.49v4.12z" fill="currentColor"/><path d="M143.89 16.39h-15.34V0h15.34v3.7h-10.38v2.62h10.38v3.73h-10.38v2.65h10.38v3.7z" fill="currentColor"/><path d="M165.03 8.52c0 5.76-2.37 7.87-8.92 7.87h-9.35V0h9.26c6.55 0 9.01 2.13 9.01 7.89v.63zm-13.31-4.66v8.67h3.71c3.89 0 4.55-1.33 4.55-4.19v-.25c0-2.86-.66-4.19-4.55-4.19h-3.71v-.04z" fill="currentColor"/><path d="M8.81 36C4.03 36 .55 34.88 0 31.04h5.28c.43 1.19 1.69 1.41 4.12 1.41 2.76 0 3.73-.42 3.75-1.55v-.19c0-.87-.46-1.27-2.09-1.29l-4.41-.16C2.09 29.07.41 27.83.41 24.67v-.16c0-3.77 2.5-5.37 8.3-5.37h.61c4.73 0 8.1 1.38 8.65 5.18h-5.28c-.36-1.24-1.52-1.61-3.82-1.61-2.64 0-3.41.42-3.41 1.52v.07c0 .87.43 1.27 2.07 1.33l4.39.14c4.55.14 6.23 1.47 6.23 4.54v.16c0 4.12-2.82 5.52-8.56 5.52h-.8z" fill="currentColor"/><path d="M25.71 35.76h-4.96V19.37h10.96c4.91 0 6.73 1.5 6.73 5.62v.47c0 3.86-1.93 5.55-6.73 5.55h-6.01v4.76zm0-12.72v4.31h5.28c2.05 0 2.48-.54 2.48-2.09v-.16c0-1.59-.5-2.06-2.52-2.06h-5.24z" fill="currentColor"/><path d="M49.45 36c-6.55 0-9.12-2.11-9.12-7.87v-1.1c0-5.76 2.57-7.9 9.12-7.9h1.27c6.55 0 9.15 2.13 9.15 7.9v1.1c0 5.76-2.59 7.87-9.15 7.87h-1.27zm.91-3.89c3.82 0 4.46-1.41 4.46-4.19v-.7c0-2.81-.64-4.19-4.46-4.19h-.53c-3.85 0-4.46 1.38-4.46 4.19v.7c0 2.79.61 4.19 4.46 4.19h.53z" fill="currentColor"/><path d="M67.15 35.76h-4.96V19.37h11.08c4.96 0 6.62 1.14 6.62 4.33v.52c0 2.46-.84 3.56-3.1 3.84v.17c2.14.37 3.1.82 3.1 3.84v3.7h-4.98v-3.47c0-1.52-.43-1.94-2.89-1.94h-4.87v5.41zm0-12.72v3.63h5.66c1.53 0 2.1-.37 2.1-1.66v-.14c0-1.43-.59-1.83-2.82-1.83h-4.94z" fill="currentColor"/><path d="M93.52 35.76h-4.96V23.49h-6.68v-4.12h18.37v4.12h-6.73v12.27z" fill="currentColor"/><path d="M110.69 36c-4.78 0-8.26-1.12-8.81-4.96h5.28c.43 1.19 1.69 1.41 4.12 1.41 2.76 0 3.73-.42 3.75-1.55v-.19c0-.87-.46-1.27-2.1-1.29l-4.41-.16c-4.55-.19-6.23-1.43-6.23-4.59v-.16c0-3.77 2.5-5.37 8.3-5.37h.62c4.73 0 8.1 1.38 8.65 5.18h-5.28c-.36-1.24-1.52-1.62-3.82-1.62-2.64 0-3.41.42-3.41 1.52v.07c0 .87.43 1.27 2.07 1.33l4.39.14c4.55.14 6.23 1.47 6.23 4.54v.16c0 4.12-2.82 5.52-8.56 5.52h-.8z" fill="currentColor"/></svg></a>
       <div class="site-header__logo-mark logo-mark logo-mark--sm" style="color:var(--color-red)"><svg viewBox="0 0 434 142" xmlns="http://www.w3.org/2000/svg"><path d="M156.655 100.212C166.722 97.528 170.092 102.311 164.142 110.846C157.271 120.702 160.903 125.403 172.211 121.297L434 26.2306H247.736C244.967 26.2306 241.277 27.986 239.541 30.1332L191.322 89.6114C188.635 92.8322 186.312 91.4249 188.495 87.6673L231.346 14.5129C236.025 6.52863 232.267 0 222.996 0H92.3755L0 142L156.655 100.212Z" fill="currentColor"/></svg></div>
-      <nav class="site-header__nav"><a href="<?php echo home_url( '/' ); ?>#about" class="site-header__nav-link">About</a><a href="<?php echo home_url( '/team/' ); ?>" class="site-header__nav-link" aria-current="page">Team</a><a href="<?php echo home_url( '/' ); ?>#press" class="site-header__nav-link">Press</a><a href="<?php echo home_url( '/' ); ?>#contact" class="site-header__nav-link">Contact</a><a href="<?php echo home_url( '/careers/' ); ?>" class="site-header__nav-link">Careers</a></nav>
+      <nav class="site-header__nav"><a href="<?php echo home_url( '/' ); ?>#about" class="site-header__nav-link">About</a><a href="<?php echo home_url( '/team/' ); ?>" class="site-header__nav-link">Team</a><a href="<?php echo home_url( '/' ); ?>#press" class="site-header__nav-link">Press</a><a href="<?php echo home_url( '/' ); ?>#contact" class="site-header__nav-link">Contact</a><a href="<?php echo home_url( '/careers/' ); ?>" class="site-header__nav-link" aria-current="page">Careers</a></nav>
       <button class="hamburger" aria-label="Open menu" onclick="openMenu()"><span class="hamburger__bar"></span><span class="hamburger__bar"></span><span class="hamburger__bar"></span></button>
     </div></header>
   </section>
 
-  <!-- LEADERSHIP TEAM + INVESTORS & PARTNERS -->
-  <section class="team-section">
-    <div class="team-section__inner">
-      <div class="team-section__header"><h1 class="team-section__headline">LEADERSHIP TEAM</h1><p class="team-section__desc">Our leadership team is on a mission to create unrivaled sport experiences for young athletes everywhere. Our team brings together decades of experience and expertise in sports, entertainment, and consumer experiences</p></div>
-      <div class="team-grid" data-animate id="leadershipGrid">
-        <div class="team-card"><div class="team-card__photo"><img src="<?php echo $assets; ?>images/team/andrew-campion.webp" alt="Andrew Campion"></div><p class="team-card__name">Andrew Campion</p><p class="team-card__title">Chief Executive Officer &amp; Chairman</p><div class="team-card__divider"></div><a href="#" class="team-card__link"><svg class="team-card__link-arrow" viewBox="0 0 14 12"><path d="M8.5 0.5L13.5 6L8.5 11.5M0.5 6H13"/></svg>LinkedIn</a><div class="team-card__divider--bottom"></div></div>
-        <div class="team-card"><div class="team-card__photo"><img src="<?php echo $assets; ?>images/team/scott-cotter.webp" alt="Scott Cotter"></div><p class="team-card__name">Scott Cotter</p><p class="team-card__title">Chief Financial Officer</p><div class="team-card__divider"></div><a href="#" class="team-card__link"><svg class="team-card__link-arrow" viewBox="0 0 14 12"><path d="M8.5 0.5L13.5 6L8.5 11.5M0.5 6H13"/></svg>LinkedIn</a><div class="team-card__divider--bottom"></div></div>
-        <div class="team-card"><div class="team-card__photo"><img src="<?php echo $assets; ?>images/team/wade-martin.webp" alt="Wade Martin"></div><p class="team-card__name">Wade Martin</p><p class="team-card__title">Chief Commercial Officer<br>Chief Executive Officer, Baseball</p><div class="team-card__divider"></div><a href="#" class="team-card__link"><svg class="team-card__link-arrow" viewBox="0 0 14 12"><path d="M8.5 0.5L13.5 6L8.5 11.5M0.5 6H13"/></svg>LinkedIn</a><div class="team-card__divider--bottom"></div></div>
-        <div class="team-card"><div class="team-card__photo"><img src="<?php echo $assets; ?>images/team/jim-reynolds.webp" alt="Jim Reynolds"></div><p class="team-card__name">Jim Reynolds</p><p class="team-card__title">Chief Executive Officer, Football &amp; Emerging Sports</p><div class="team-card__divider"></div><a href="#" class="team-card__link"><svg class="team-card__link-arrow" viewBox="0 0 14 12"><path d="M8.5 0.5L13.5 6L8.5 11.5M0.5 6H13"/></svg>LinkedIn</a><div class="team-card__divider--bottom"></div></div>
-        <div class="team-card"><div class="team-card__photo"><img src="<?php echo $assets; ?>images/team/kevin-english.webp" alt="Kevin English"></div><p class="team-card__name">Kevin English</p><p class="team-card__title">Partner and CEO, Unrivaled Action</p><div class="team-card__divider"></div><a href="#" class="team-card__link"><svg class="team-card__link-arrow" viewBox="0 0 14 12"><path d="M8.5 0.5L13.5 6L8.5 11.5M0.5 6H13"/></svg>LinkedIn</a><div class="team-card__divider--bottom"></div></div>
-        <div class="team-card"><div class="team-card__photo"><img src="<?php echo $assets; ?>images/team/erin-clift.webp" alt="Erin Clift"></div><p class="team-card__name">Erin Clift</p><p class="team-card__title">Chief Marketing Officer</p><div class="team-card__divider"></div><a href="#" class="team-card__link"><svg class="team-card__link-arrow" viewBox="0 0 14 12"><path d="M8.5 0.5L13.5 6L8.5 11.5M0.5 6H13"/></svg>LinkedIn</a><div class="team-card__divider--bottom"></div></div>
-        <div class="team-card"><div class="team-card__photo"><img src="<?php echo $assets; ?>images/team/dan-burnham.webp" alt="Dan Burnham"></div><p class="team-card__name">Dan Burnham</p><p class="team-card__title">Chief Legal Officer</p><div class="team-card__divider"></div><a href="#" class="team-card__link"><svg class="team-card__link-arrow" viewBox="0 0 14 12"><path d="M8.5 0.5L13.5 6L8.5 11.5M0.5 6H13"/></svg>LinkedIn</a><div class="team-card__divider--bottom"></div></div>
-        <div class="team-card"><div class="team-card__photo"><img src="<?php echo $assets; ?>images/team/amanda-shank.webp" alt="Amanda Shank"></div><p class="team-card__name">Amanda Shank</p><p class="team-card__title">Executive Vice President, Strategic Initiatives</p><div class="team-card__divider"></div><a href="#" class="team-card__link"><svg class="team-card__link-arrow" viewBox="0 0 14 12"><path d="M8.5 0.5L13.5 6L8.5 11.5M0.5 6H13"/></svg>LinkedIn</a><div class="team-card__divider--bottom"></div></div>
-        <div class="team-card"><div class="team-card__photo"><img src="<?php echo $assets; ?>images/team/taylor-white.webp" alt="Taylor White"></div><p class="team-card__name">Taylor White</p><p class="team-card__title">Vice President, Human Resources</p><div class="team-card__divider"></div><a href="#" class="team-card__link"><svg class="team-card__link-arrow" viewBox="0 0 14 12"><path d="M8.5 0.5L13.5 6L8.5 11.5M0.5 6H13"/></svg>LinkedIn</a><div class="team-card__divider--bottom"></div></div>
-        <div class="team-card"><div class="team-card__photo"><img src="<?php echo $assets; ?>images/team/michael-campbell.webp" alt="Michael Campbell"></div><p class="team-card__name">Michael Campbell</p><p class="team-card__title">General Counsel</p><div class="team-card__divider"></div><a href="#" class="team-card__link"><svg class="team-card__link-arrow" viewBox="0 0 14 12"><path d="M8.5 0.5L13.5 6L8.5 11.5M0.5 6H13"/></svg>LinkedIn</a><div class="team-card__divider--bottom"></div></div>
-        <div class="team-card"><div class="team-card__photo"><img src="<?php echo $assets; ?>images/team/jordan-oakes.webp" alt="Jordan Oakes"></div><p class="team-card__name">Jordan Oakes</p><p class="team-card__title">Chief of Staff</p><div class="team-card__divider"></div><a href="#" class="team-card__link"><svg class="team-card__link-arrow" viewBox="0 0 14 12"><path d="M8.5 0.5L13.5 6L8.5 11.5M0.5 6H13"/></svg>LinkedIn</a><div class="team-card__divider--bottom"></div></div>
+  <!-- CAREERS -->
+  <section class="careers-section">
+    <div class="careers-section__inner">
+      <div class="careers-section__header">
+        <h1 class="careers-section__headline">WORK WITH US</h1>
+        <p class="careers-section__desc">Join our team and help create unrivaled experiences for young athletes everywhere.</p>
       </div>
-
-      <div class="team-section__divider"></div>
-
-      <div class="team-section__header"><h2 class="team-section__headline">INVESTORS &amp; PARTNERS</h2><p class="team-section__desc">Our team is supported by investors and partners who share our commitment to serving young athletes.</p></div>
-      <div class="team-grid" data-animate id="investorsGrid">
-        <div class="team-card"><div class="team-card__photo"><div class="ph">Photo</div></div><p class="team-card__name">David Blitzer</p><p class="team-card__title">Co-Founder, Controlling Partner</p><div class="team-card__divider"></div></div>
-        <div class="team-card"><div class="team-card__photo"><div class="ph">Photo</div></div><p class="team-card__name">Josh Harris</p><p class="team-card__title">Co-Founder, Controlling Partner</p><div class="team-card__divider"></div></div>
-        <div class="team-card team-card--partner"><div class="team-card__photo"><div class="ph">Logo</div></div><p class="team-card__name">The Chernin Group</p><p class="team-card__title">Investor</p><div class="team-card__divider"></div></div>
-        <div class="team-card team-card--partner"><div class="team-card__photo"><div class="ph">Logo</div></div><p class="team-card__name">Dick's Sporting Goods</p><p class="team-card__title">Investor</p><div class="team-card__divider"></div></div>
-        <div class="team-card"><div class="team-card__photo"><div class="ph">Photo</div></div><p class="team-card__name">David Blitzer</p><p class="team-card__title">Co-Founder, Controlling Partner</p><div class="team-card__divider"></div></div>
-        <div class="team-card"><div class="team-card__photo"><div class="ph">Photo</div></div><p class="team-card__name">Josh Harris</p><p class="team-card__title">Co-Founder, Controlling Partner</p><div class="team-card__divider"></div></div>
-        <div class="team-card team-card--partner"><div class="team-card__photo"><div class="ph">Logo</div></div><p class="team-card__name">The Chernin Group</p><p class="team-card__title">Investor</p><div class="team-card__divider"></div></div>
-        <div class="team-card team-card--partner"><div class="team-card__photo"><div class="ph">Logo</div></div><p class="team-card__name">Dick's Sporting Goods</p><p class="team-card__title">Investor</p><div class="team-card__divider"></div></div>
-        <div class="team-card"><div class="team-card__photo"><div class="ph">Photo</div></div><p class="team-card__name">David Blitzer</p><p class="team-card__title">Co-Founder, Controlling Partner</p><div class="team-card__divider"></div></div>
-        <div class="team-card"><div class="team-card__photo"><div class="ph">Photo</div></div><p class="team-card__name">Josh Harris</p><p class="team-card__title">Co-Founder, Controlling Partner</p><div class="team-card__divider"></div></div>
-        <div class="team-card team-card--partner"><div class="team-card__photo"><div class="ph">Logo</div></div><p class="team-card__name">The Chernin Group</p><p class="team-card__title">Investor</p><div class="team-card__divider"></div></div>
-        <div class="team-card team-card--partner"><div class="team-card__photo"><div class="ph">Logo</div></div><p class="team-card__name">Dick's Sporting Goods</p><p class="team-card__title">Investor</p><div class="team-card__divider"></div></div>
-        <div class="team-card"><div class="team-card__photo"><div class="ph">Photo</div></div><p class="team-card__name">David Blitzer</p><p class="team-card__title">Co-Founder, Controlling Partner</p><div class="team-card__divider"></div></div>
-        <div class="team-card"><div class="team-card__photo"><div class="ph">Photo</div></div><p class="team-card__name">Josh Harris</p><p class="team-card__title">Co-Founder, Controlling Partner</p><div class="team-card__divider"></div></div>
-        <div class="team-card team-card--partner"><div class="team-card__photo"><div class="ph">Logo</div></div><p class="team-card__name">The Chernin Group</p><p class="team-card__title">Investor</p><div class="team-card__divider"></div></div>
-        <div class="team-card team-card--partner"><div class="team-card__photo"><div class="ph">Logo</div></div><p class="team-card__name">Dick's Sporting Goods</p><p class="team-card__title">Investor</p><div class="team-card__divider"></div></div>
+      <div class="careers-section__embed" id="careersEmbed">
+        <script type="text/javascript" src="https://careers-content.clearcompany.com/js/v1/career-site.js?siteId=4516edc6-a4d0-c459-e8ac-b4f6b63f734d"></script>
       </div>
     </div>
   </section>
@@ -935,13 +759,13 @@ $assets = get_theme_file_uri( "assets/" );
         <div class="site-footer__col" id="careers"><p class="site-footer__label">Careers</p><a href="<?php echo home_url( '/careers/' ); ?>" class="site-footer__link">Overview</a><a href="<?php echo home_url( '/careers/' ); ?>" class="site-footer__link">Open Roles</a></div>
         <div class="site-footer__col"><p class="site-footer__label">Contact</p><a href="/cdn-cgi/l/email-protection#01686f676e41746f736877606d646572716e7375722f626e6c" class="site-footer__email"><span class="__cf_email__" data-cfemail="422b2c242d02372c302b34232e272631322d3036316c212d2f">[email&#160;protected]</span></a></div>
       </div>
-      <div class="site-footer__legal"><a href="#" class="site-footer__legal-link">Privacy Policy</a><p class="site-footer__legal-text">© 2026 Unrivaled Sports - All rights reserved</p></div>
+      <div class="site-footer__legal"><a href="#" class="site-footer__legal-link">Privacy Policy</a><p class="site-footer__legal-text">&copy; 2026 Unrivaled Sports - All rights reserved</p></div>
     </div>
   </footer>
 
   <script>
     /* --- Mobile Menu --- */
-    const mobileMenu = document.getElementById('mobileMenu');
+    var mobileMenu = document.getElementById('mobileMenu');
     function openMenu() {
       mobileMenu.setAttribute('data-open', 'true');
       document.body.classList.add('menu-open');
@@ -950,22 +774,22 @@ $assets = get_theme_file_uri( "assets/" );
       mobileMenu.setAttribute('data-open', 'false');
       document.body.classList.remove('menu-open');
     }
-    document.addEventListener('keydown', (e) => {
+    document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape' && mobileMenu.getAttribute('data-open') === 'true') closeMenu();
     });
 
     /* --- Scroll-direction-aware sticky nav --- */
-    const hero = document.getElementById('teamHero');
-    const stickyNav = document.getElementById('stickyNav');
-    let lastScrollY = 0;
-    let navVisible = false;
+    var hero = document.getElementById('careersHero');
+    var stickyNav = document.getElementById('stickyNav');
+    var lastScrollY = 0;
+    var navVisible = false;
 
     function updateNav() {
-      const scrollY = window.scrollY;
-      const heroBottom = hero ? hero.offsetHeight : 0;
-      const scrollingDown = scrollY > lastScrollY;
-      const scrollingUp = scrollY < lastScrollY;
-      const pastHero = scrollY > heroBottom;
+      var scrollY = window.scrollY;
+      var heroBottom = hero ? hero.offsetHeight : 0;
+      var scrollingDown = scrollY > lastScrollY;
+      var scrollingUp = scrollY < lastScrollY;
+      var pastHero = scrollY > heroBottom;
 
       if (!pastHero) {
         if (navVisible) { stickyNav.setAttribute('data-visible', 'false'); navVisible = false; }
@@ -977,26 +801,26 @@ $assets = get_theme_file_uri( "assets/" );
       lastScrollY = scrollY;
     }
 
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-      if (!ticking) { requestAnimationFrame(() => { updateNav(); ticking = false; }); ticking = true; }
+    var ticking = false;
+    window.addEventListener('scroll', function() {
+      if (!ticking) { requestAnimationFrame(function() { updateNav(); ticking = false; }); ticking = true; }
     });
     updateNav();
 
     /* --- Scroll-triggered animations --- */
-    document.querySelectorAll('[data-animate]').forEach(el => {
-      new IntersectionObserver(([e]) => { if (e.isIntersecting) { el.classList.add('is-visible'); } }, { threshold: 0.15 }).observe(el);
+    document.querySelectorAll('[data-animate]').forEach(function(el) {
+      new IntersectionObserver(function(entries) { if (entries[0].isIntersecting) { el.classList.add('is-visible'); } }, { threshold: 0.15 }).observe(el);
     });
 
-    setTimeout(() => {
-      document.querySelectorAll('[data-animate]').forEach(el => {
-        const rect = el.getBoundingClientRect();
+    setTimeout(function() {
+      document.querySelectorAll('[data-animate]').forEach(function(el) {
+        var rect = el.getBoundingClientRect();
         if (rect.top < window.innerHeight && rect.bottom > 0) el.classList.add('is-visible');
       });
     }, 500);
 
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      document.querySelectorAll('[data-animate]').forEach(el => el.classList.add('is-visible'));
+      document.querySelectorAll('[data-animate]').forEach(function(el) { el.classList.add('is-visible'); });
     }
   </script>
 <?php wp_footer(); ?>

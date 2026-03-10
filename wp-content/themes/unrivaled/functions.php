@@ -66,6 +66,10 @@ function unrivaled_create_pages() {
             'title'    => 'Team',
             'template' => 'page-team.php',
         ),
+        'careers' => array(
+            'title'    => 'Careers',
+            'template' => 'page-careers.php',
+        ),
     );
 
     foreach ( $pages as $slug => $page ) {
