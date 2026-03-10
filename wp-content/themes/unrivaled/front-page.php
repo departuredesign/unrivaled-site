@@ -507,9 +507,12 @@ $assets = get_theme_file_uri( "assets/" );
       border-radius: var(--radius); overflow: hidden; display: flex; align-items: center; justify-content: center;
       transition: transform var(--transition-base), box-shadow var(--transition-base);
     }
-    .brand-card__image img { max-width: 75%; max-height: 70%; object-fit: contain; }
+    .brand-card__image img { max-width: 75%; max-height: 70%; object-fit: contain; filter: url(#gold-duotone); transition: filter 0.5s ease; }
     .brand-card__overlay { position: absolute; inset: 10% 8%; background-color: var(--color-gold-overlay); mix-blend-mode: screen; pointer-events: none; }
-    @media (hover: hover) { .brand-card:hover .brand-card__image { transform: scale(1.02); box-shadow: 0 4px 20px rgba(0,0,0,0.15); } }
+    @media (hover: hover) {
+      .brand-card:hover .brand-card__image { transform: scale(1.02); box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+      .brand-card:hover .brand-card__image img { filter: none; }
+    }
 
     .brand-card__name {
       font-family: var(--font-display); font-weight: var(--weight-bold);
@@ -736,6 +739,18 @@ $assets = get_theme_file_uri( "assets/" );
   </style>
 </head>
 <body>
+<!-- SVG filter: gold duotone for brand logos (black→#C1A556, white→white) -->
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0">
+  <defs>
+    <filter id="gold-duotone" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix"
+        values="0.0727 0.1426 0.0277 0 0.757
+                0.1056 0.2072 0.0402 0 0.647
+                0.1982 0.3891 0.0756 0 0.337
+                0      0      0      1 0" />
+    </filter>
+  </defs>
+</svg>
 
   <!-- ================================================================
        MOBILE MENU (fixed overlay)
@@ -914,7 +929,7 @@ $assets = get_theme_file_uri( "assets/" );
         <div class="brand-card"><div class="brand-card__image"><div class="ph-logo">Rocker B</div><div class="brand-card__overlay"></div></div><p class="brand-card__name">Rocker B Ranch</p><div class="brand-card__divider"></div><a href="#" class="visit-site-link"><svg class="visit-site-link__arrow" viewBox="0 0 23 13"><path d="M22.4262 6.11868L0 12.2325V0L22.4262 6.11868Z" fill="#0162FF"/></svg><span class="visit-site-link__text">Visit Site</span></a><div class="brand-card__divider"></div></div>
         <div class="brand-card"><div class="brand-card__image"><div class="ph-logo">Aberdeen</div><div class="brand-card__overlay"></div></div><p class="brand-card__name">Ripken Experience Aberdeen</p><div class="brand-card__divider"></div><a href="#" class="visit-site-link"><svg class="visit-site-link__arrow" viewBox="0 0 23 13"><path d="M22.4262 6.11868L0 12.2325V0L22.4262 6.11868Z" fill="#0162FF"/></svg><span class="visit-site-link__text">Visit Site</span></a><div class="brand-card__divider"></div></div>
         <div class="brand-card"><div class="brand-card__image"><div class="ph-logo">Myrtle Beach</div><div class="brand-card__overlay"></div></div><p class="brand-card__name">Ripken Experience Myrtle Beach</p><div class="brand-card__divider"></div><a href="#" class="visit-site-link"><svg class="visit-site-link__arrow" viewBox="0 0 23 13"><path d="M22.4262 6.11868L0 12.2325V0L22.4262 6.11868Z" fill="#0162FF"/></svg><span class="visit-site-link__text">Visit Site</span></a><div class="brand-card__divider"></div></div>
-        <div class="brand-card"><div class="brand-card__image"><div class="ph-logo">Pigeon Forge</div><div class="brand-card__overlay"></div></div><p class="brand-card__name">Ripken Experience Pigeon Forge</p><div class="brand-card__divider"></div><a href="#" class="visit-site-link"><svg class="visit-site-link__arrow" viewBox="0 0 23 13"><path d="M22.4262 6.11868L0 12.2325V0L22.4262 6.11868Z" fill="#0162FF"/></svg><span class="visit-site-link__text">Visit Site</span></a><div class="brand-card__divider"></div></div>
+        <div class="brand-card"><div class="brand-card__image"><img src="images/ripken-pf-color.webp" alt="Ripken Experience Pigeon Forge"></div><p class="brand-card__name">Ripken Experience Pigeon Forge</p><div class="brand-card__divider"></div><a href="#" class="visit-site-link"><svg class="visit-site-link__arrow" viewBox="0 0 23 13"><path d="M22.4262 6.11868L0 12.2325V0L22.4262 6.11868Z" fill="#0162FF"/></svg><span class="visit-site-link__text">Visit Site</span></a><div class="brand-card__divider"></div></div>
         <div class="brand-card"><div class="brand-card__image"><div class="ph-logo">ForeverLawn</div><div class="brand-card__overlay"></div></div><p class="brand-card__name">ForeverLawn Sports Complex</p><div class="brand-card__divider"></div><a href="#" class="visit-site-link"><svg class="visit-site-link__arrow" viewBox="0 0 23 13"><path d="M22.4262 6.11868L0 12.2325V0L22.4262 6.11868Z" fill="#0162FF"/></svg><span class="visit-site-link__text">Visit Site</span></a><div class="brand-card__divider"></div></div>
       </div>
       <div class="brand-list">
