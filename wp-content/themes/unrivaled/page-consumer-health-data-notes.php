@@ -634,7 +634,7 @@ $assets = get_theme_file_uri( "assets/" );
         <div class="site-footer__col"><p class="site-footer__label">Careers</p><a href="<?php echo home_url( '/careers/' ); ?>" class="site-footer__link">Overview</a><a href="<?php echo home_url( '/careers/' ); ?>" class="site-footer__link">Open Roles</a></div>
         <div class="site-footer__col"><p class="site-footer__label">Contact</p><a href="mailto:info@unrivaledsports.com" class="site-footer__email">info@unrivaledsports.com</a></div>
       </div>
-      <div class="site-footer__legal"><p class="site-footer__legal-text">&copy; 2026 Unrivaled Sports - All rights reserved</p><a href="https://www.unrivaledsports.com/privacy-policy" class="site-footer__legal-link">Privacy Policy</a><a href="https://www.unrivaledsports.com/consumer-health-data-notes" class="site-footer__legal-link">Consumer Health Data Notice</a></div>
+      <div class="site-footer__legal"><p class="site-footer__legal-text">&copy; 2026 Unrivaled Sports - All rights reserved</p><a href="<?php echo home_url( '/privacy-policy/' ); ?>" class="site-footer__legal-link">Privacy Policy</a><a href="<?php echo home_url( '/consumer-health-data-notes/' ); ?>" class="site-footer__legal-link">Consumer Health Data Notice</a></div>
     </div>
   </footer>
 
