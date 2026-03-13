@@ -1001,19 +1001,9 @@ $assets = get_theme_file_uri( "assets/" );
         <h2 class="section-header__headline">Catch Us in Action</h2>
       </div>
     </div>
-    <div class="carousel" data-variant="instagram" data-speed="25">
-      <div class="carousel__track">
-        <div class="carousel__slide"><a href="#" class="carousel__slide-link"><div class="ph ph--1" style="width:271px;height:338px;border-radius:6px;"></div></a></div>
-        <div class="carousel__slide"><a href="#" class="carousel__slide-link"><div class="ph ph--2" style="width:271px;height:338px;border-radius:6px;"></div></a></div>
-        <div class="carousel__slide"><a href="#" class="carousel__slide-link"><div class="ph ph--3" style="width:271px;height:338px;border-radius:6px;"></div></a></div>
-        <div class="carousel__slide"><a href="#" class="carousel__slide-link"><div class="ph ph--4" style="width:271px;height:338px;border-radius:6px;"></div></a></div>
-        <div class="carousel__slide"><a href="#" class="carousel__slide-link"><div class="ph ph--5" style="width:271px;height:338px;border-radius:6px;"></div></a></div>
-        <div class="carousel__slide" aria-hidden="true"><a href="#" class="carousel__slide-link" tabindex="-1"><div class="ph ph--1" style="width:271px;height:338px;border-radius:6px;"></div></a></div>
-        <div class="carousel__slide" aria-hidden="true"><a href="#" class="carousel__slide-link" tabindex="-1"><div class="ph ph--2" style="width:271px;height:338px;border-radius:6px;"></div></a></div>
-        <div class="carousel__slide" aria-hidden="true"><a href="#" class="carousel__slide-link" tabindex="-1"><div class="ph ph--3" style="width:271px;height:338px;border-radius:6px;"></div></a></div>
-        <div class="carousel__slide" aria-hidden="true"><a href="#" class="carousel__slide-link" tabindex="-1"><div class="ph ph--4" style="width:271px;height:338px;border-radius:6px;"></div></a></div>
-        <div class="carousel__slide" aria-hidden="true"><a href="#" class="carousel__slide-link" tabindex="-1"><div class="ph ph--5" style="width:271px;height:338px;border-radius:6px;"></div></a></div>
-      </div>
+    <div class="section-wrapper__inner">
+      <div id="flockler-embed-19ce7ac616c02604d9509c3341c17e4c"></div>
+      <script src="https://plugins.flockler.com/embed/17b131d18040ebee9b0885f29553aad8/19ce7ac616c02604d9509c3341c17e4c" async></script>
     </div>
   </section>
 
