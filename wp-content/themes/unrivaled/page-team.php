@@ -2,6 +2,7 @@
 /**
  * Template Name: Team Page
  * Team page template for Unrivaled Sports.
+ *
  */
 $assets = get_theme_file_uri( "assets/" );
 ?>
