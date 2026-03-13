@@ -1,7 +1,6 @@
 <?php
 /**
- * Default page template for Unrivaled Sports.
- * Renders WordPress page content with site nav and footer.
+ * Privacy Policy page template for Unrivaled Sports.
  */
 $assets = get_theme_file_uri( "assets/" );
 ?>
@@ -518,12 +517,353 @@ $assets = get_theme_file_uri( "assets/" );
        ================================================================ -->
   <main class="page-content">
     <div class="page-content__inner">
-      <?php
-      while ( have_posts() ) :
-        the_post();
-        the_content();
-      endwhile;
-      ?>
+      <h1>Unrivaled Privacy Policy</h1>
+      <p><strong>Last Updated: February 1, 2025</strong></p>
+
+      <p>This document describes personal data handling practices of Sandlot Youth Sports Holdings, LLC d/b/a Unrivaled Sports and its controlled affiliates (collectively &ldquo;Unrivaled&rdquo;) for website visitors and service users.</p>
+
+      <h2>Quick Links to Key Sections</h2>
+      <ol>
+        <li>Personal Information That We Collect</li>
+        <li>How We Use the Information</li>
+        <li>With Whom We Share the Information</li>
+        <li>Mobile Messaging</li>
+        <li>Third-Party Websites</li>
+        <li>Security and Retention of Your Personal Information</li>
+        <li>Children&rsquo;s Privacy</li>
+        <li>Grounds for Using the Information</li>
+        <li>Your Privacy Rights and Choices</li>
+        <li>Users Outside the United States</li>
+        <li>Changes to this Privacy Policy</li>
+        <li>Contact Us</li>
+      </ol>
+
+      <h2>1. Personal Information We Collect</h2>
+
+      <h3>(A) Information Automatically Collected</h3>
+
+      <h4>Computer IP Addresses/Browser Type</h4>
+      <p>The company collects browser type, IP address, operating system type, and internet service provider domain name to improve service design and analyze usage patterns.</p>
+
+      <h4>Cookies</h4>
+      <p>Unrivaled sends cookies and gif files to assign unique identifiers to user devices. Cookies store user preferences and track site usage. Users can disable cookies through browser settings, though some service functions may be impaired.</p>
+
+      <h4>Pixel Tags</h4>
+      <p>The company uses tracking pixels embedded on pages and in communications to verify page views, message opens, link clicks, and content interactions.</p>
+
+      <h4>Cross Contextual Behavioral Tracking</h4>
+      <p>Unrivaled and third parties (Google, Bing, TikTok, Facebook) use tracking technology to monitor user activities across websites after leaving the site, enabling targeted advertising.</p>
+      <p>Users may disable some tracking through:</p>
+      <ul>
+        <li>&ldquo;Do Not Track&rdquo; browser settings</li>
+        <li>Network Advertising Initiative opt-out options</li>
+        <li>Digital Advertising Alliance opt-out options</li>
+        <li>Google Ads Settings</li>
+        <li>Google Analytics Opt-out Browser Add-on</li>
+      </ul>
+
+      <h4>Cross Device Tracking</h4>
+      <p>The company tracks user service access across devices to optimize and personalize experiences. Opting out may require repeated information uploads and login entries.</p>
+
+      <h4>Social Media Pages</h4>
+      <p>Unrivaled operates pages on Facebook, Instagram, TikTok, X, and YouTube. Social media providers process data independently; the company is not responsible for their content or privacy practices.</p>
+
+      <h4>Mobile Device Information</h4>
+      <p>When using mobile devices, collected information may include:</p>
+      <ul>
+        <li>Name associated with device</li>
+        <li>Telephone number</li>
+        <li>Geolocation</li>
+        <li>Mobile device ID information</li>
+      </ul>
+
+      <h3>(B) Information Voluntarily Provided</h3>
+      <p>Users provide information when:</p>
+      <ul>
+        <li>Creating and logging into accounts</li>
+        <li>Registering for athletic events, tournaments, games, camps, and clinics</li>
+        <li>Registering as players, coaches, or umpires</li>
+        <li>Completing registration forms, waivers, and medical releases</li>
+        <li>Registering for newsletters, live streaming, and photo services</li>
+        <li>Purchasing merchandise and equipment</li>
+        <li>Uploading athlete videos</li>
+        <li>Applying for employment</li>
+        <li>Accessing training resources</li>
+        <li>Contacting via email, phone, mail, or chat</li>
+      </ul>
+
+      <h4>Types of Personally Identifiable Information Collected</h4>
+      <ul>
+        <li>Full name</li>
+        <li>Mailing/billing address</li>
+        <li>Email address</li>
+        <li>Telephone number</li>
+        <li>Emergency contact information</li>
+        <li>Credit card or payment information</li>
+        <li>Date of birth and birth certificates (for age verification)</li>
+        <li>Information from forms, waivers, and medical releases</li>
+      </ul>
+
+      <h4>Third-Party Tournament Applications</h4>
+      <p>Users may upload personal information of players and coaches to third-party tournament apps. These apps maintain separate privacy policies; Unrivaled is not responsible for their practices.</p>
+
+      <h4>Recording of Events</h4>
+      <p>Events may be recorded and live-streamed, available to other users or the public. Telephone calls and video conferences may be recorded. Chat sessions may be recorded and used by both Unrivaled and chat service providers.</p>
+
+      <h4>Artificial Intelligence in Customer Support</h4>
+      <p>The company may use chatbots with artificial intelligence and natural language processing for customer support. Users who don&rsquo;t consent should contact via email instead.</p>
+
+      <h4>Employment Applications</h4>
+      <p>Job applicants may be asked for:</p>
+      <ul>
+        <li>Date of birth</li>
+        <li>Legal right to work in the United States</li>
+        <li>Employment history</li>
+        <li>Criminal history</li>
+        <li>Military service information</li>
+        <li>Resume, transcript, or cover letter information</li>
+      </ul>
+
+      <h4>Aggregate Data</h4>
+      <p>Unrivaled reserves the right to transfer or sell aggregate data describing user demographics and usage characteristics without disclosing personally identifiable information.</p>
+
+      <h2>2. How We Use the Personal Information</h2>
+      <p>Personal information is used for:</p>
+      <ul>
+        <li>Providing customer service and responding to inquiries</li>
+        <li>Providing requested information</li>
+        <li>User onboarding</li>
+        <li>Facilitating registrations and transactions</li>
+        <li>Customizing user experience</li>
+        <li>Displaying tailored advertisements</li>
+        <li>Contacting users regarding interactions</li>
+        <li>Providing status updates and transactional emails</li>
+        <li>Account notices and contact via telephone, text, email, or chat</li>
+        <li>Research purposes and survey requests</li>
+        <li>Marketing communications</li>
+        <li>Internal business analysis and management</li>
+        <li>Creating rosters and schedules</li>
+        <li>Filling employment positions</li>
+        <li>Fulfilling legal obligations</li>
+        <li>Providing, maintaining, and improving services</li>
+        <li>Testing services</li>
+        <li>Managing platform integrity</li>
+        <li>Monitoring performance and improving user experience</li>
+        <li>Protecting rights and property</li>
+        <li>Other disclosed purposes at registration</li>
+      </ul>
+
+      <h2>3. With Whom We Share the Information</h2>
+      <p>Information may be shared with:</p>
+      <ul>
+        <li>Current and future parents, affiliates, subsidiaries, and commonly-owned companies</li>
+        <li>Third-party service providers including technology providers, hosting providers, e-commerce platforms, communications providers, payment processors, data analytics providers, customer relations management providers, job hosts, professional advisors, coaches, leagues, event facilities, and sponsors</li>
+      </ul>
+
+      <h4>Specific Third-Party Uses</h4>
+      <ul>
+        <li>Player registration services</li>
+        <li>Age verification and medical form review services</li>
+        <li>Sponsorship partners (via agreements) for email and contact information</li>
+        <li>Recruitment and hiring vendors</li>
+        <li>Background check vendors for employees and league personnel</li>
+      </ul>
+
+      <h4>Video and Live-Stream Sharing</h4>
+      <p>Uploaded videos may be accessible to other users, scouts, recruiters, college coaches, and the public. Live-stream feeds may be publicly available.</p>
+
+      <h4>Legal Disclosures</h4>
+      <p>Unrivaled may disclose information if necessary for investigations, complaints, legal action, or to comply with law, regulation, legal process, or governmental requests. Information may be shared for fraud protection purposes.</p>
+
+      <h4>Business Transfers</h4>
+      <p>Information may be shared in connection with mergers, divestitures, restructurings, reorganizations, or asset sales/transfers.</p>
+
+      <h4>Policy Violations and Unlawful Use</h4>
+      <p>Information may be released if users violate terms of service, commit unlawful acts, or as deemed necessary, including sharing email addresses with third parties for CAN-SPAM compliance.</p>
+
+      <h2>4. Mobile Messaging</h2>
+      <p>Some Unrivaled affiliates offer mobile messaging programs. By providing a mobile phone number, users consent to receive telemarketing communications under the Amended Telemarketing Sales Rule and state do-not-call regulations, even if listed on the Federal Trade Commission&rsquo;s Do-Not-Call List.</p>
+
+      <h4>Service Uses</h4>
+      <ul>
+        <li>Confirmation texts for registration</li>
+        <li>Service-related announcements</li>
+        <li>Optional promotional texts based on user preferences</li>
+      </ul>
+
+      <p>Participation is optional and not required for purchase. By opting in, users consent to receive autodialed or prerecorded marketing messages. Message and data rates may apply; Unrivaled is not responsible for wireless charges.</p>
+
+      <h4>Opt-Out Options</h4>
+      <p>Users can cancel by texting &ldquo;STOP.&rdquo; A confirmation SMS will be sent. Service-related notifications may continue. Users needing assistance can text &ldquo;HELP.&rdquo;</p>
+
+      <h4>Information Sharing</h4>
+      <p>Information may be shared with platform providers, phone companies, and other service providers assisting with message delivery. Information may be disclosed as necessary to satisfy law, regulation, governmental requests, avoid liability, or protect rights or property.</p>
+
+      <h2>5. Third-Party Websites</h2>
+      <p>The Services contain links to third-party websites including social media and tournament apps. Unrivaled is not responsible for their privacy practices or content. These sites have separate privacy policies and data collection practices.</p>
+
+      <h2>6. Security and Retention of Your Personal Information</h2>
+      <p>Unrivaled uses reasonable administrative, physical, and technical precautions to protect personal information online and offline, including encryption and written commitments from third parties.</p>
+
+      <h4>Security Limitations</h4>
+      <p>No storage facility, technology, software, security protocol, or internet transmission can be guaranteed 100% secure. Hackers may breach security measures; technological bugs may cause inadvertent disclosures. Attempts to breach security constitute crimes punishable by law. Users assume risk for any data transmission.</p>
+
+      <h4>Employee Access</h4>
+      <p>Only employees or agents needing information for specific job functions have access. Non-compliant employees face disciplinary action.</p>
+
+      <h4>Retention</h4>
+      <p>Personal information is retained for the maximum period permitted by law. Deletion criteria include collection date, interaction frequency, last interaction, and completion of collection purposes.</p>
+
+      <h2>7. Children&rsquo;s Privacy</h2>
+      <p>Information should not be submitted by visitors under thirteen (13) years of age (or the applicable age of majority if greater). Persons this age are not permitted to use the Services. Unrivaled does not knowingly collect personal information from such individuals. Parents and guardians are encouraged to monitor children&rsquo;s online activities. Parents or authorized persons may be required to complete registration forms and waivers for children under eighteen (18).</p>
+
+      <h2>8. Grounds for Using Your Personal Information</h2>
+      <p>Unrivaled processes personal information based on:</p>
+
+      <h4>Consent</h4>
+      <p>Marketing communications and some other uses require consent. Users may withdraw consent by emailing <a href="mailto:privacy@unrivaledsports.com">privacy@unrivaledsports.com</a> or calling 1-410-306-7566. Cookie consent can be withdrawn via browser and mobile settings.</p>
+
+      <h4>Performance of a Contract</h4>
+      <p>The company collects and uses information to enter contracts and perform requested services.</p>
+
+      <h4>Legitimate Interests</h4>
+      <p>Personal information is used for providing and improving services and content consistent with legitimate interests and applicable law requirements.</p>
+
+      <h4>Compliance with Legal Obligations</h4>
+      <p>Information is used as necessary to comply with legal requirements.</p>
+
+      <h2>9. Your Privacy Rights and Choices</h2>
+
+      <h3>(A) General Rights</h3>
+      <p>Unrivaled facilitates exercise of rights under applicable jurisdiction laws, including correction, modification, or deletion of personal information and opt-outs from sale or sharing (if applicable). Users may request changes by emailing <a href="mailto:privacy@unrivaledsports.com">privacy@unrivaledsports.com</a> or calling 1-410-306-7566.</p>
+
+      <h4>Request Process</h4>
+      <p>Users must identify themselves and specify information requested. Unrivaled may decline unreasonably repetitive or systematic requests, those requiring disproportionate technical effort, those jeopardizing others&rsquo; privacy, or those impractical to implement.</p>
+
+      <h4>Data Deletion Timeline</h4>
+      <p>After deletion, residual copies may remain on active servers and backup systems for a period.</p>
+
+      <h4>Marketing Communications</h4>
+      <p>Users can opt out of electronic marketing by clicking &ldquo;unsubscribe&rdquo; or emailing <a href="mailto:privacy@unrivaledsports.com">privacy@unrivaledsports.com</a>. Non-marketing communications (transactions, legal disclosures, software updates, support) may not be subject to opt-out. Users must cease service requests, inquiry submissions, and deactivate accounts to stop service-related messages.</p>
+
+      <h4>Additional Rights</h4>
+      <p>Users may have rights under jurisdiction laws including complaints to data protection authorities and appeals of data access decisions.</p>
+
+      <h4>Cookie Management</h4>
+      <p>Users may disable cookies through browser settings, though this may limit service functionality.</p>
+
+      <h3>(B) European Privacy Rights and Choices</h3>
+      <p>Unrivaled accommodates rights under the European Union&rsquo;s General Data Protection Regulation (GDPR) and similar laws for non-U.S. residents.</p>
+
+      <h4>GDPR Rights</h4>
+      <ul>
+        <li>Transparency and information access through this policy</li>
+        <li>Right to access, correct, restrict processing, and erase personal data</li>
+        <li>Right to withdraw consent</li>
+        <li>Right to object to marketing and promotional materials</li>
+        <li>Right to object to processing based on specific situations</li>
+        <li>Right to data portability by contacting the company</li>
+        <li>Right not to be subject to automated decisions including profiling</li>
+        <li>Right to lodge complaints with supervisory authorities in member states of residence, work, or alleged infringement</li>
+      </ul>
+
+      <h3>(C) California and Similar U.S. State Laws</h3>
+
+      <h4>CCPA Disclosures</h4>
+      <p>California residents and those in similar states may request:</p>
+      <ul>
+        <li>Categories of personal information collected (including sensitive information)</li>
+        <li>Sources of personal information</li>
+        <li>Business or commercial purposes for collection, sale, or sharing</li>
+        <li>Third-party categories receiving personal information</li>
+        <li>Categories of information disclosed for business purposes</li>
+        <li>Specific personal information pieces collected</li>
+      </ul>
+
+      <h4>Additional California Rights</h4>
+      <ul>
+        <li>Length of retention time</li>
+        <li>Deletion of personal information</li>
+        <li>Correction of inaccurate data</li>
+        <li>Opt-out of sale or sharing (if applicable)</li>
+        <li>Limit use of sensitive personal information (if applicable)</li>
+        <li>Non-discrimination for exercising CCPA rights</li>
+      </ul>
+
+      <h4>Categories of Personal Information</h4>
+      <p>The policy includes a detailed table describing collected information categories, sources, collection purposes, and disclosure recipients for the twelve months preceding the effective date.</p>
+
+      <h4>Sensitive Data</h4>
+      <p>Any sensitive data collected is used only for business purposes, not for inferring consumer characteristics.</p>
+
+      <h4>Sales and Sharing</h4>
+      <p>Unrivaled does not sell personal information for monetary consideration. Information may be provided to service providers and third parties under CCPA provisions.</p>
+
+      <h4>Opt-Out Options</h4>
+      <p>Users may opt out of cookies and tracking technology through browser settings and opt out of Google Analytics through the browser add-on.</p>
+
+      <h4>Request Submission</h4>
+      <p>Users may email <a href="mailto:privacy@unrivaledsports.com">privacy@unrivaledsports.com</a> or call 1-410-306-7566.</p>
+
+      <h4>Identity Verification</h4>
+      <p>Users must provide name, address, and email address. Standard authentication procedures (username/password login) and historical transaction information may be required. Additional information may be requested if insufficient for verification.</p>
+
+      <h4>Authorized Agents</h4>
+      <p>Users may designate authorized agents to make CCPA requests.</p>
+
+      <h4>Response Timeline</h4>
+      <p>Unrivaled endeavors to respond within forty-five (45) days or will inform users of extensions up to ninety (90) days. Responses cover the twelve-month period preceding request receipt and explain non-compliance reasons if applicable.</p>
+
+      <h4>Fees</h4>
+      <p>No fees apply unless requests are excessive, repetitive, or manifestly unfounded. Fees will be explained with cost estimates.</p>
+
+      <h4>Shine the Light</h4>
+      <p>California residents may learn how personal information is shared by emailing <a href="mailto:privacy@unrivaledsports.com">privacy@unrivaledsports.com</a>, calling 1-410-306-7566, or sending mail to: Unrivaled Sports, 880 Long Drive, Aberdeen, MD 21001.</p>
+
+      <h4>Browser Do Not Track and GPC</h4>
+      <p>Unrivaled has implemented tools recognizing and honoring Do Not Track browser settings and Global Privacy Control signals.</p>
+
+      <h2>10. Users Outside the United States</h2>
+      <p>Services are hosted in the United States and directed to U.S. users. Users from Canada, the European Union, Asia, or other regions with different data protection laws are advised that continued use means transferring personal data to the United States, which may have different protection rules. By using the Services, users consent to such transfer.</p>
+
+      <h2>11. Changes to this Privacy Policy</h2>
+      <p>Unrivaled reserves the right to change, modify, add, or remove policy portions at any time. Changes apply to already-collected and future information. Continued service use indicates agreement with revised policies. Users should review periodically. Material changes will be noted on the home page. The update date appears at the top.</p>
+
+      <h2>12. Contact Us</h2>
+      <p>For questions about this privacy policy or Unrivaled practices:</p>
+      <p><strong>Email:</strong> <a href="mailto:privacy@unrivaledsports.com">privacy@unrivaledsports.com</a><br>
+      <strong>Phone:</strong> 410-306-7566<br>
+      <strong>Mail:</strong> Unrivaled Sports, 880 Long Drive, Aberdeen, MD 21001</p>
+
+      <h2>Unrivaled Sports Controlled Affiliated Companies</h2>
+      <ul>
+        <li>Sandlot Youth Sports Holdings, LLC d/b/a Unrivaled Sports</li>
+        <li>Sandlot Baseball Holdings, LLC</li>
+        <li>Rocker B Hospitality, LLC</li>
+        <li>Diamond Nation LLC</li>
+        <li>Sandlot YTH, LLC</li>
+        <li>Cooperstown All Star Village, LLC</li>
+        <li>17 Tournaments, LLC</li>
+        <li>Oakwood Lodging Group, LLC</li>
+        <li>Sports Force Parks Sandusky, LLC</li>
+        <li>Ripken Factory LLC</li>
+        <li>Ripken Holdings LLC</li>
+        <li>Ripken Baseball Camps &amp; Clinics LLC</li>
+        <li>Ripken Pigeon Forge LLC</li>
+        <li>R-C Myrtle Beach LLC</li>
+        <li>Extra Bases, LLC</li>
+        <li>Ripken Elizabethtown, LLC</li>
+        <li>Ripken Select LLC</li>
+        <li>Ripken Grounds LLC</li>
+        <li>All Ripken LLC</li>
+        <li>Unrivaled BLD Holdings, LLC</li>
+        <li>Big League Dreams Las Vegas, LLC</li>
+        <li>Big League Dreams Manteca, LLC</li>
+        <li>Sandlot HOFV Canton SC, LLC</li>
+        <li>Sandlot Flag LLC</li>
+        <li>Under the Lights, LLC (FKA One Team Youth, LLC)</li>
+        <li>Massflag, LLC</li>
+      </ul>
     </div>
   </main>
 

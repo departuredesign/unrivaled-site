@@ -1,7 +1,6 @@
 <?php
 /**
- * Default page template for Unrivaled Sports.
- * Renders WordPress page content with site nav and footer.
+ * Consumer Health Data Notice page template for Unrivaled Sports.
  */
 $assets = get_theme_file_uri( "assets/" );
 ?>
@@ -518,12 +517,109 @@ $assets = get_theme_file_uri( "assets/" );
        ================================================================ -->
   <main class="page-content">
     <div class="page-content__inner">
-      <?php
-      while ( have_posts() ) :
-        the_post();
-        the_content();
-      endwhile;
-      ?>
+      <h1>Unrivaled Consumer Health Data Privacy Notice</h1>
+
+      <p>This consumer health data privacy notice supplements the <a href="/privacy-policy">Privacy Policy</a> of Sandlot Youth Sports Holdings, LLC d/b/a Unrivaled Sports and its affiliates (&ldquo;Unrivaled,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) and applies to personal data defined as &ldquo;consumer health data&rdquo; subject to the Washington State MyHealth My Data Act (MHMDA). This notice describes the following:</p>
+
+      <ul>
+        <li>The categories of consumer health data collected by Unrivaled;</li>
+        <li>How we use the consumer health data;</li>
+        <li>With whom we share the consumer health data; and</li>
+        <li>How consumers can withdraw consent from future collection or sharing of their health data.</li>
+      </ul>
+
+      <h2>Categories of Consumer Health Data Collected</h2>
+
+      <p>Unrivaled is in the business of supporting youth sports, including providing camps and hosting tournaments to youth participants (each, a &ldquo;Participant&rdquo;).</p>
+
+      <p>We may learn health-related information through forms submitted to us by a Participant or a parent or guardian of a Participant relating to the Participants&rsquo; immunization records, injuries, medications, and any pre-existing conditions.</p>
+
+      <p>Unrivaled may have medical staff or trainers on hand at Unrivaled&rsquo;s camps and tournaments, and if injuries occur, such staff will collect information as needed to address and respond.</p>
+
+      <p>We may learn health-related information if it is offered to us voluntarily when a user contacts us via email, phone or chat.</p>
+
+      <p>We learn about health-related preferences based on online behavioral advertising collected with tracking technologies. Please see our <a href="/privacy-policy">Privacy Policy</a> for more information about our use of tracking technologies.</p>
+
+      <h2>How We Use the Consumer Health Data</h2>
+
+      <p>We use the health data we collect to:</p>
+
+      <ul>
+        <li>ensure a safe environment for our Participants;</li>
+        <li>administer required protocols of the sports leagues and facilities (e.g., obtaining physician&rsquo;s physical examination reports and vaccination records);</li>
+        <li>address and respond to injuries or conditions of our Participants;</li>
+        <li>administer needed medications while Participants attend camps;</li>
+        <li>submit, respond to, or defend claims.</li>
+      </ul>
+
+      <p>We may use the data on an anonymized and de-identified basis for legitimate business purposes, including for analysis, research and development.</p>
+
+      <h2>With Whom We Share the Consumer Health Data</h2>
+
+      <p>We may share or disclose your personal information as follows:</p>
+
+      <ul>
+        <li><strong>Our affiliates.</strong> In order to provide our services to you, we may share information with our affiliates, a list of which can be found below.</li>
+        <li><strong>Sale or Acquisition.</strong> Your information may be transferred to another company in connection with a merger or in the event that our business is acquired in whole or part by another company.</li>
+        <li><strong>Third Parties.</strong> We share this information with third parties such as the following:
+          <ul>
+            <li>With service providers who assist us in verifying that the medical forms of the Participants are completed correctly and in their entirety.</li>
+            <li>With facilities and trainers (who may be employees or independent contractors) who are on site at our facilities.</li>
+            <li>With medical staff if medical attention is necessary for a Participant.</li>
+            <li>With our insurers and professional advisors.</li>
+            <li>With technology and chat service providers, who perform services and functions on our behalf to support our interactions with you. These service providers may assist with technical operation of our website, provide analytics, or provide customer service. We may also share non-identifying information, such as aggregate statistics or usage information, with third parties.</li>
+          </ul>
+        </li>
+        <li><strong>Legal Disclosure.</strong> We may transfer and disclose information to third parties to comply with a legal obligation; when we believe in good faith that the law requires it; at the request of governmental authorities conducting an investigation; to verify or enforce our agreements, terms of use, or other applicable policies; to respond to an emergency; or otherwise to protect the rights, property, safety, or security of third parties, visitors to our website, or the public.</li>
+        <li><strong>Using Chat Features.</strong> Our website utilizes a chat feature to provide customer support. Use of the chat feature is completely voluntary. Chat sessions are recorded and used by both us and our chat service provider. We may now or in the future provide customer support via chatbox or email that utilizes artificial intelligence (AI) and natural language processing (NLP) to understand customer questions and automate responses to them, simulating human conversation. If you do not consent to these terms, please do not use the chat feature and contact us via email.</li>
+      </ul>
+
+      <h2>How Consumers Can Withdraw Consent from Future Collection or Sharing of Their Health Data</h2>
+
+      <p>You have specific rights with respect to your consumer health data:</p>
+
+      <ul>
+        <li>You have the right to know if we are collecting, using or disclosing your consumer health data, to access that data, and to receive a list of the affiliates and the categories of third parties with whom we have shared your information.</li>
+        <li>If we are processing your consumer health data with your consent, you have the right to withdraw that consent.</li>
+        <li>You have the right to request that we delete your consumer health data.</li>
+      </ul>
+
+      <p>We will do our best to honor your requests subject to any legal and contractual obligations. We will not discriminate against you for exercising any of your rights.</p>
+
+      <p>To exercise your rights, you can contact us or otherwise communicate your request by emailing us at <a href="mailto:privacy@unrivaledsports.com">privacy@unrivaledsports.com</a>.</p>
+
+      <p>We will authenticate your request and process it as required by law. Please allow 45 days for a response. If we deny your request, you may appeal that denial by requesting a review of the decision via email to <a href="mailto:privacy@unrivaledsports.com">privacy@unrivaledsports.com</a>.</p>
+
+      <h2>Unrivaled Sports Controlled Affiliated Companies</h2>
+
+      <ul>
+        <li>Sandlot Youth Sports Holdings, LLC d/b/a Unrivaled Sports</li>
+        <li>Sandlot Baseball Holdings, LLC</li>
+        <li>Rocker B Hospitality, LLC</li>
+        <li>Diamond Nation LLC</li>
+        <li>Sandlot YTH, LLC</li>
+        <li>Cooperstown All Star Village, LLC</li>
+        <li>17 Tournaments, LLC</li>
+        <li>Oakwood Lodging Group, LLC</li>
+        <li>Sports Force Parks Sandusky, LLC</li>
+        <li>Ripken Factory LLC</li>
+        <li>Ripken Holdings LLC</li>
+        <li>Ripken Baseball Camps &amp; Clinics LLC</li>
+        <li>Ripken Pigeon Forge LLC</li>
+        <li>R-C Myrtle Beach LLC</li>
+        <li>Extra Bases, LLC</li>
+        <li>Ripken Elizabethtown, LLC</li>
+        <li>Ripken Select LLC</li>
+        <li>Ripken Grounds LLC</li>
+        <li>All Ripken LLC</li>
+        <li>Unrivaled BLD Holdings, LLC</li>
+        <li>Big League Dreams Las Vegas, LLC</li>
+        <li>Big League Dreams Manteca, LLC</li>
+        <li>Sandlot HOFV Canton SC, LLC</li>
+        <li>Sandlot Flag LLC</li>
+        <li>Under the Lights, LLC (FKA One Team Youth, LLC)</li>
+        <li>Massflag, LLC</li>
+      </ul>
     </div>
   </main>
 
